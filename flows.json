@@ -1,0 +1,2489 @@
+[
+    {
+        "id": "2d6c057d03b50939",
+        "type": "tab",
+        "label": "WatchMon",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e310869fbebb70e9",
+        "type": "udp in",
+        "z": "2d6c057d03b50939",
+        "name": "listener",
+        "iface": "",
+        "port": "18542",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "491c325c4d789537"
+            ]
+        ]
+    },
+    {
+        "id": "491c325c4d789537",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "All Message Type numbers to Topic",
+        "func": "msg.Topic = (msg.payload[2].toString(16).toUpperCase() + msg.payload[1].toString(16).toUpperCase())\nreturn\tmsg;\t\t\n\t\t\t\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "8e08e0c94b80a5d8",
+                "a19e112d463dfe6f"
+            ]
+        ]
+    },
+    {
+        "id": "8e08e0c94b80a5d8",
+        "type": "switch",
+        "z": "2d6c057d03b50939",
+        "name": "Split the messages by type",
+        "property": "Topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "4232",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5732",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "415A",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5432",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5831",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6831",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4F33",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5033",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5158",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5233",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4E33",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5931",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5932",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5A31",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5B31",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4A36",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4B36",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4C34",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4D34",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5335",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3E33",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3F34",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6133",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4733",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4932",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4033",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3033",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5635",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5634",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "7832",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5A32",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3233",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3031",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 33,
+        "x": 480,
+        "y": 1240,
+        "wires": [
+            [
+                "5a61c63443614846"
+            ],
+            [
+                "28436c2111062f13"
+            ],
+            [
+                "61bc1ccfb14897c0"
+            ],
+            [
+                "f0dc20bd33318c02"
+            ],
+            [
+                "06bb80f070b66633"
+            ],
+            [
+                "a986acc59cf835fa"
+            ],
+            [
+                "5613f06f5e8707c0"
+            ],
+            [
+                "016393b10e6fc112"
+            ],
+            [
+                "447fab1d4bc70d5b"
+            ],
+            [
+                "f15937d5d6df29f9"
+            ],
+            [
+                "840c026fe42c2b97"
+            ],
+            [
+                "f5d3e8fd4602d84b"
+            ],
+            [
+                "0f8fc9c532850570"
+            ],
+            [
+                "f3182440d24d095f"
+            ],
+            [
+                "8d2030f6997805da"
+            ],
+            [
+                "85866ba4e0b35f33"
+            ],
+            [
+                "92650f9dacb6257b"
+            ],
+            [
+                "da5ba3b536220463"
+            ],
+            [
+                "1f4bf1598d8615df"
+            ],
+            [
+                "806f6815f3cc7746"
+            ],
+            [
+                "704f9a2ab4497ad7"
+            ],
+            [
+                "fb9608c93169c1fa"
+            ],
+            [
+                "c9e1245aa260af6c"
+            ],
+            [
+                "213a6a64c166c3fb"
+            ],
+            [
+                "60fc179c61435aa2"
+            ],
+            [
+                "276e4727477233e1"
+            ],
+            [
+                "68c57f5dd5fa876b"
+            ],
+            [
+                "5f29d93bdf2e1c6f"
+            ],
+            [
+                "7e65a4599ca7ef01"
+            ],
+            [
+                "6e88717be17a8ca3"
+            ],
+            [
+                "0993e8e795ab0645"
+            ],
+            [
+                "89be817b4e1cc77a"
+            ],
+            [
+                "e5b7cdca2e37eb69"
+            ]
+        ]
+    },
+    {
+        "id": "8124278feb05370f",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 2940,
+        "wires": []
+    },
+    {
+        "id": "c70cdc8459cc92b7",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "eacb94e7274c7906",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 2840,
+        "wires": []
+    },
+    {
+        "id": "340e86ebc16e8bbe",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "337ece8d276b8d1f",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "4b48b70d9825d729",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 2540,
+        "wires": []
+    },
+    {
+        "id": "c82222aa84b813bd",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "6e88717be17a8ca3",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_7832_MetricsShunt",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Telemetry Metrics\n// Object      = Shunt\n// MsgLength   = 32\n// Description = Hardware shunt metrics\n// Version     = 2\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t.skip(8)\n\t.uint8('ShuntMetricsVers')          // index 8\n\t.bit1('hasShuntSocCountLo')         // boolean index 9 - bit0\n\t.bit1('hasShuntSocCountHi')         // boolean index 9 - bit1\n\t.bit6('reserved')\n\t.int16le('ShuntSocCycles')          // index 10\n\t.uint32le('RecentTimeAcculmSave')   // index 12 - Epoch\n\t.uint32le('RecentTimeSocLoRecal')   // index 16 - Epoch\n\t.uint32le('RecentTimeSocHiRecal')   // index 20 - Epoch\n\t.uint32le('RecentTimeSocCountLo')   // index 24 - Epoch\n\t.uint32le('RecentTimeSocCountHi')   // index 28 - Epoch\n\t\t\n\n  \nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.RecentTimeAcculmSave = new Date(msg.payload.RecentTimeAcculmSave*1000);\nmsg.payload.RecentTimeSocLoRecal = new Date(msg.payload.RecentTimeSocLoRecal*1000);\nmsg.payload.RecentTimeSocHiRecal = new Date(msg.payload.RecentTimeSocHiRecal*1000);\nmsg.payload.RecentTimeSocCountLo = new Date(msg.payload.RecentTimeSocCountLo*1000);\nmsg.payload.RecentTimeSocCountHi = new Date(msg.payload.RecentTimeSocCountHi*1000);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 3680,
+        "wires": [
+            [
+                "d8e8ac620303a072"
+            ]
+        ]
+    },
+    {
+        "id": "d8e8ac620303a072",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 3740,
+        "wires": []
+    },
+    {
+        "id": "fb9608c93169c1fa",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_3f34_TelemetryShuntStatus",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Aggregated telemetry\n// Object      = Shunt/Fast\n// MsgLength   = 50\n// Description = Combined status Shunt/Fast\n// Version     = 4\n// Frequency   = 300 milliseconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n    .skip(8)\n    .int16le('SupplyVolt',              { formatter: (x) => {return x/100;}})  // index 8\n    .uint8('AmbientTemp',               { formatter: (x) => {return x-40;}})   // index 10 - temperature ºC\n    .uint8('ShuntTemp',                 { formatter: (x) => {return x-40;}})   // index 11 - temperature ºC \n    .int16le('ShuntVoltage',            { formatter: (x) => {return x/100;}})  // index 12 - voltage\n    .floatle('ShuntCurrent',            { formatter: (x) => {return x/1000;}}) // index 14 - amp\n    .floatle('ShuntPowerVA',            { formatter: (x) => {return x/1000;}}) // index 18 - kW\n    .int16le('ShuntSOC',                { formatter: (x) => {return x/100;}})  // index 22 - percent hi-res 2 dec.pt\n    .skip(1) // original SoC low res\n    .bit1('hasShuntSocCountLo')         // boolean index 25 - bit0\n    .bit1('hasShuntSocCountHi')         // boolean index 25 - bit1\n    .bit1('hasShuntLoSocRecal')         // boolean index 25 - bit2\n    .bit1('hasShuntHiSocRecal')         // boolean index 25 - bit3\n    .bit4('reserved')\n    // shunt.hasShuntOkSocRange = !(shunt.hasShuntLoSocRecal || shunt.hasShuntHiSocRecal);\n    .floatle('NomCapacityToFull',       { formatter: (x) => {return x/1000;}}) // index 26 - Ah\n    .floatle('NomCapacityToEmpty',      { formatter: (x) => {return x/1000;}}) // index 30 - Ah \n    .int16le('EstDurationToFullmins')   // index 34 - minutes\n    .int16le('EstDurationToEmptymins')  // index 36 - minutes\n    .floatle('ShuntAcculmAvgCharge',    { formatter: (x) => {return x/1000;}}) // index 38 - ampere\n    .floatle('ShuntAcculmAvgDischg',    { formatter: (x) => {return x/1000;}}) // index 42 - ampere\n    .floatle('ShuntAcculmAvgNett',      { formatter: (x) => {return x/1000;}}) // index 46 - ampere\n\n\n  \nmsg.payload = typea.parse(buf);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 2880,
+        "wires": [
+            [
+                "8124278feb05370f"
+            ]
+        ]
+    },
+    {
+        "id": "61bc1ccfb14897c0",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_415a_TelemetryCellmonStatus(v1) ",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Telemetry\n// Object      = CellNodeItem\n// Description = Cell node - array up to 16 nodes\n// MsgLength   = variable\n// Version     = 1\n// Frequency   = 300 mS\n// Support     = Current\n// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.uint8('ID')\n        .uint8('USN')\n        .int16le('MinCellVolt',                 { formatter: (x) => {return x/1000;}})\n        .int16le('MaxCellVolt',                 { formatter: (x) => {return x/1000;}})\n        .uint8('MinCellTemp',                   { formatter: (x) => {return x-40;}}) // temperature ºC\n        .uint8('BypassTemp',                    { formatter: (x) => {return x-40;}}) // temperature ºC\n        .int16le('BypassAmp',                   { formatter: (x) => {return x/1000;}})\n        .uint8('Status'); /* Choices NodeStatuses\n\t\t\t\t\t\tNone = 0,\n\t\t\t\t\t\tHighVolt = 1,\n\t\t\t\t\t\tHighTemp = 2,\n\t\t\t\t\t\tOk = 3,\n\t\t\t\t\t\tTimeout = 4,\n\t\t\t\t\t\tLowVolt = 5,\n\t\t\t\t\t\tDisabled = 6,\n\t\t\t\t\t\tInBypass = 7,\n\t\t\t\t\t\tInitialBypass = 8,\n\t\t\t\t\t\tFinalBypass = 9,\n\t\t\t\t\t\tMissingSetup = 10,\n\t\t\t\t\t\tNoConfig = 11,\n\t\t\t\t\t\tCellOutLimits = 12, */\n/*\n\t\tvar status = new Packet()\n\t\t.skip(8)\n\t\t.uint8('CmuRxOpStatusNodeID')\n\t\t.uint8('Records')\n\t\t.uint8('FirstNodeID')\n\t\t.uint8('LastNodeID')\n\t\t.array('nodes', {\n\t\t\ttype : Packet(),\n\t\t\tlength : 'Records'\n\t\t})\n*/\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.Status) {\n    case 0:\n        msg.payload.Status = \"None\";\n        break;\n    case 1:\n        msg.payload.Status = \"HighVolt\";\n        break;\n    case 2:\n        msg.payload.Status = \"HighTemp\";\n        break;\n    case 3:\n        msg.payload.Status = \"Ok\";\n        break;\n    case 4:\n        msg.payload.Status = \"Timeout\";\n        break;\n    case 5:\n        msg.payload.Status = \"LowVolt\";\n        break;\n    case 6:\n        msg.payload.Status = \"Disabled\";\n        break;\n    case 7:\n        msg.payload.Status = \"InBypass\";\n        break;\n    case 8:\n        msg.payload.Status = \"InitialBypass\";\n        break;\n    case 9:\n        msg.payload.Status = \"FinalBypass\";\n        break;\n    case 10:\n        msg.payload.Status = \"MissingSetup\";\n        break;\n    case 11:\n        msg.payload.Status = \"NoConfig\";\n        break;\n    case 12:\n        msg.payload.Status = \"CellOutLimits\";\n        break;\n    default:\n        msg.payload.Status = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 920,
+        "wires": [
+            [
+                "340e86ebc16e8bbe"
+            ]
+        ]
+    },
+    {
+        "id": "5a37f56d0cd4c5d1",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "704f9a2ab4497ad7",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_3e33_TelemetryCellStatsStatus",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Aggregated telemetry\n// Object      = Rapid/CellStats\n// Description = Combined status - Rapid/CellStats\n// MsgLength   = 48\n// Version     = 3\n// Frequency   = 300 milliseconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t.skip(8)\n\t.int16le('MinCellVolt', { formatter: (x) => { return x / 1000; } }) // index 8\n\t.int16le('MaxCellVolt', { formatter: (x) => { return x / 1000; } }) // index 10\n\t.uint8('MinCellVoltId')     // index 12\n\t.uint8('MaxCellVoltId')     // index 13\n\t.uint8('MinCellTemp', { formatter: (x) => { return x - 40; } }) // index 14 - temperature ºC\n\t.uint8('MaxCellTemp', { formatter: (x) => { return x - 40; } }) // index 15 - temperature ºC\n\t.uint8('MinCellTempId')     // index 16\n\t.uint8('MaxCellTempId')     // index 17\n\t.int16le('MinBypassAmp', { formatter: (x) => { return x / 1000; } }) // index 18 - amperes\n\t.int16le('MaxBypassAmp', { formatter: (x) => { return x / 1000; } }) // index 20 - amperes\n\t.uint8('MinBypassAmpId')    // index 22\n\t.uint8('MaxBypassAmpId')    // index 23\n\t.uint8('MinBypassTemp', { formatter: (x) => { return x - 40; } })   // index 24 - temperature ºC\n\t.uint8('MaxBypassTemp', { formatter: (x) => { return x - 40; } })   // index 25 - temperature ºC\n\t.uint8('MinBypassTempId', { formatter: (x) => { return x - 40; } })   // index 26\n\t.uint8('MaxBypassTempId', { formatter: (x) => { return x - 40; } })   // index 27\n\t.int16le('AvgCellVolt', { formatter: (x) => { return x / 1000; } }) // index 28\n\t.uint8('AvgCellTemp', { formatter: (x) => { return x - 40; } })   // index 30 - temperature ºC\n\t.uint8('NumOfCellsAboveInitialBypass') // index 31\n\t.uint8('NumOfCellsAboveFinalBypass')   // index 32\n\t.uint8('NumOfCellsInBypass')           // index 33\n\t.uint8('NumOfCellsOverdue')            // index 34\n\t.uint8('NumOfCellsActive')             // index 35\n\t.uint8('NumOfCellsInSystem')           // index 36\n\t.skip(1)                               // reserved 37\n\t.floatle('MinBypassSession', { formatter: (x) => { return x / 1000; } }) // index 38 - Ah\n\t.floatle('MaxBypassSession', { formatter: (x) => { return x / 1000; } }) // index 42 - Ah\n\t.uint8('MinBypassSessionID')           // index 46\n\t.uint8('MaxBypassSessionID')           // index 47 \n\n  \nmsg.payload = typea.parse(buf);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 2780,
+        "wires": [
+            [
+                "eacb94e7274c7906"
+            ]
+        ]
+    },
+    {
+        "id": "5a61c63443614846",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4232_TelemetryCellmonFull ",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Telemetry\n// Object      = CellNodeItem\n// Description = Cell node - full details\n// MsgLength   = 52\n// Version     = 2\n// Frequency   = 300 mS\n// Support     = Current\n// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8('ID')\n\t\t.uint8('USN')\n\t\t.int16le('MinCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('MaxCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8('MinCellTemp',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8('BypassTemp',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.int16le('BypassAmp', \t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8('DataErrorCounter')\n\t\t.uint8('ResetCounter')\n\t\t.uint8('Status') /* Choices NodeStatuses\n\t\t\t\tNone = 0,\n\t\t\t\tHighVolt = 1,\n\t\t\t\tHighTemp = 2,\n\t\t\t\tOk = 3,\n\t\t\t\tTimeout = 4,\n\t\t\t\tLowVolt = 5,\n\t\t\t\tDisabled = 6,\n\t\t\t\tInBypass = 7,\n\t\t\t\tInitialBypass = 8,\n\t\t\t\tFinalBypass = 9,\n\t\t\t\tMissingSetup = 10,\n\t\t\t\tNoConfig = 11,\n\t\t\t\tCellOutLimits = 12, */\t\n\t\t.uint8('IsOverdue')\t\t\t\t// boolean 0 = Off , 1 = On\n\n\t\t.int16le('LoCellVoltAlert',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HiCellVoltAlert',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('BypassVoltLevel',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('BypassAmpLimit',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8('BypassTempLimit',\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8('HiCellTempAlert',\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8('RawVoltCalOffset')\n\t\t.int16le('FwVers')\n\t\t.int16le('HwVers')\n\t\t.int16le('BootVers')\n\t\t.uint32le('SerialNo')\t\n\t\t.uint32le('BypassInitialDate') \t// Epoch\n\t\t.floatle('BypassSessionAh',\t\t{ formatter: (x) => {return x/1000;}}) // Ah\n\t\t.uint8('RepeatCellV')\n\n  \nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.BypassInitialDate = new Date(msg.payload.BypassInitialDate*1000);\n\n\nswitch(msg.payload.Status) {\n    case 0:\n        msg.payload.Status = \"None\";\n        break;\n    case 1:\n        msg.payload.Status = \"HighVolt\";\n        break;\n    case 2:\n        msg.payload.Status = \"HighTemp\";\n        break;\n    case 3:\n        msg.payload.Status = \"Ok\";\n        break;\n    case 4:\n        msg.payload.Status = \"Timeout\";\n        break;\n    case 5:\n        msg.payload.Status = \"LowVolt\";\n        break;\n    case 6:\n        msg.payload.Status = \"Disabled\";\n        break;\n    case 7:\n        msg.payload.Status = \"InBypass\";\n        break;\n    case 8:\n        msg.payload.Status = \"InitialBypass\";\n        break;\n    case 9:\n        msg.payload.Status = \"FinalBypass\";\n        break;\n    case 10:\n        msg.payload.Status = \"MissingSetup\";\n        break;\n    case 11:\n        msg.payload.Status = \"NoConfig\";\n        break;\n    case 12:\n        msg.payload.Status = \"CellOutLimits\";\n        break;\n    default:\n        msg.payload.Status = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 260,
+        "wires": [
+            [
+                "5a37f56d0cd4c5d1",
+                "6aa8154a8848847b"
+            ]
+        ]
+    },
+    {
+        "id": "0f36f72e167687cb",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 3240,
+        "wires": []
+    },
+    {
+        "id": "60fc179c61435aa2",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4932_TelemetryRemoteStatus",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Aggregated telemetry\n// Object      = Remote\n// MsgLength   = 62\n// Description = Control remote status\n// Version     = 2\n// Frequency   = 2 seconds\n// Support     = Current\n// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8('CanbusRxStatusTicks')  \n\t\t.uint8('CanbusRxUnknownTicks')  \n\t\t.uint8('CanbusTxCmdTicks')  \n\t\t.uint8('RemoteChargeActualCelcius', \t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.int16le('RemoteChargeTargetVolt')\n\t\t.int16le('RemoteChargeTargetAmp')\n\t\t.int16le('RemoteChargeTargetVA')\n\t\t.int16le('RemoteChargeActualVolt')\n\t\t.int16le('RemoteChargeActualAmp')\n\t\t.int16le('RemoteChargeActualVA')\n\t\t.uint32le('RemoteChargeActualFlag1')\n\t\t.uint32le('RemoteChargeActualFlag2')\n\t\t.uint32le('RemoteChargeActualRxTime') // Epoch\n\t\t.skip(1)\n\t\t.uint8('RemoteDishargeActualCelcius', \t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.int16le('RemoteDischargeTargetVolt')\n\t\t.int16le('RemoteDischargeTargetAmp')\n\t\t.int16le('RemoteDischargeTargetVA')\n\t\t.int16le('RemoteDischargeActualVolt')\n\t\t.int16le('RemoteDischargeActualAmp')\n\t\t.int16le('RemoteDischargeActualVA')\n\t\t.uint32le('RemoteDischargeActualFlag1')\n\t\t.uint32le('RemoteDischargeActualFlag2')\n\t\t.uint32le('RemoteDischargeActualRxTime') // Epoch\n  \nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.RemoteChargeActualRxTime = new Date(msg.payload.RemoteChargeActualRxTime*1000);\nmsg.payload.RemoteDischargeActualRxTime = new Date(msg.payload.RemoteDischargeActualRxTime*1000);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 3180,
+        "wires": [
+            [
+                "0f36f72e167687cb"
+            ]
+        ]
+    },
+    {
+        "id": "cfa003a4e7a7cd63",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "21b42f7ef91b092a",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "28436c2111062f13",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5732_DiscoverySystem",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Discovery\n// MsgLength   = 50\n// Description = System Discovery message\n// Version     = 2\n// Frequency   = 2 seconds\n// Support     = Current\n// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.string('SystemCode', \t{ encoding: 'ascii', length: 8 })\n\t\t.int16le('SystemFirmwareVersion')\n\t\t.int16le('SystemHardwareVersion')\n\t\t.int32le('SystemTime') // Epoch\n\t\t.uint8('SystemOpStatus') /* Choices\n\t\t\t\tSimulator = 0,   \t  // LED = rainbow pulse\n\t\t\t\tIdle = 1,        \t  // LED = green slow pulse\n\t\t\t\tDischarging = 2, \t  // LED = green solid \n\t\t\t\tSoC Empty = 3,   \t  // LED = green double blink\n\t\t\t\tCharging = 4,    \t  // LED = blue slow pulse\n\t\t\t\tFull = 5,        \t  // LED = blue double blink\n\t\t\t\tTimeout = 6,     \t  // LED = red solid\n\t\t\t\tCritical Pending = 7, // LED = red fast pulse\n\t\t\t\tCritical Offline = 8, // LED = red slow pulse\n\t\t\t\tMqtt Offline = 9,     // LED = white blink\n\t\t\t\tAuth Setup = 10,      // LED = white solid\n\t\t\t\tShunt Timeout = 11,   // LED = red solid  \t*/\n\t\t.uint8('SystemAuthMode') /* Choices\n\t\t\t\tDefault \t= 0,\n\t\t\t\tTechnician \t= 1,\n\t\t\t\tFactory \t= 2, */\n\t\t.uint8('CriticalBatOkState')    // 0 = Off , 1 = On\n\t\t.uint8('ChargePowerRateState')  /* Choices\n\t\t\t\tOff \t\t\t= 0,\n\t\t\t\tLimited Power \t= 2,\n\t\t\t\tNormal Power  \t= 4, */\n\t\t.uint8('DischargePowerRateState') /* Choices\n\t\t\t\tOff \t\t\t= 0,\n\t\t\t\tLimited Power \t= 2,\n\t\t\t\tNormal Power  \t= 4, */\n\t\t.uint8('HeatOnState') \t\t\t// 0 = Off , 1 = On\n\t\t.uint8('CoolOnState') \t\t\t// 0 = Off , 1 = On\n\t\t.int16le('MinCellVolt', \t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('MaxCellVolt', \t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('AvgCellVolt', \t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8('MinCellTemp', \t\t{ formatter: (x) => {return x-40;}})     // temperature ºC\n\t\t.uint8('NumOfCellsActive')\n\t\t.uint8('CmuRxOpStatusUSN')\n\t\t.uint8('CmuPollerMode')  /* Choices\n\t\t\t\tIdle = 0,\n\t\t\t\tNormal = 1,\n\t\t\t\tCollection Start = 2,\n\t\t\t\tCollection Running = 3,\n\t\t\t\tSync Start = 4,\n\t\t\t\tSync Running = 5,\n\t\t\t\tNetworkTest Start = 6,\n\t\t\t\tNetworkTest Running = 9,\n\t\t\t\tBypassTest Start = 7,\n\t\t\t\tBypassTest Running = 8,\n\t\t\t\tRebootAll Start = 10,\n\t\t\t\tRebooting AllDevices = 11,\n\t\t\t\tSimulator Start = 12,\n\t\t\t\tSimulator Running = 13, */\n\t\t.uint8('ShuntSOC',\t\t\t{ formatter: (x) => {return x/2-5;}})    // percent\n\t\t.int16le('ShuntVoltage',\t{ formatter: (x) => {return x/100;}})\n\t\t.floatle('ShuntCurrent',\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8('ShuntStatus') /* Choices\n\t\t\t\tTimeout = 0,\n\t\t\t\tDischarging = 1,\n\t\t\t\tIdle = 2,\n\t\t\t\tCharging = 4 */\n\t\t.uint8('ShuntRxAmpTicks')\n  \nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.SystemTime = new Date(msg.payload.SystemTime*1000);\n\nswitch(msg.payload.SystemOpStatus) {\n    case 0:\n        msg.payload.SystemOpStatus = \"Timeout\";\n        break;\n    case 1:\n        msg.payload.SystemOpStatus = \"Idle\";\n        break;\n    case 2:\n        msg.payload.SystemOpStatus = \"Charging\";\n        break;\n    case 3:\n        msg.payload.SystemOpStatus = \"Discharging\";\n        break;\n    case 4:\n        msg.payload.SystemOpStatus = \"Full\";\n        break;\n    case 5:\n        msg.payload.SystemOpStatus = \"Empty\";\n        break;\n    case 6:\n        msg.payload.SystemOpStatus = \"Simulator\";\n        break;\n    case 7:\n        msg.payload.SystemOpStatus = \"CriticalPending\";\n        break;\n    case 8:\n        msg.payload.SystemOpStatus = \"CriticalOffline\";\n        break;\n    case 9:\n        msg.payload.SystemOpStatus = \"MqttOffline\";\n        break;\n    case 10:\n        msg.payload.SystemOpStatus = \"AuthSetup\";\n        break;\n    case 11:\n        msg.payload.SystemOpStatus = \"Shunt Timeout\";\n        break;\n    default:\n        msg.payload.SystemOpStatus = \"Bad\";\n}\n\nswitch(msg.payload.SystemAuthMode) {\n    case 0:\n        msg.payload.SystemAuthMode = \"Default\";\n        break;\n    case 1:\n        msg.payload.SystemAuthMode = \"Technician\";\n        break;\n    case 2:\n        msg.payload.SystemAuthMode = \"Factory\";\n        break;\n    default:\n        msg.payload.SystemAuthMode = \"Bad\";\n}\n\nswitch(msg.payload.ChargePowerRateState) {\n    case 0:\n        msg.payload.ChargePowerRateState = \"Off\";\n        break;\n    case 2:\n        msg.payload.ChargePowerRateState = \"Limited Power\";\n        break;\n    case 4:\n        msg.payload.ChargePowerRateState = \"Normal Power\";\n        break;\n    default:\n        msg.payload.ChargePowerRateState = \"Bad\";\n}\n\nswitch(msg.payload.DischargePowerRateState) {\n    case 0:\n        msg.payload.DischargePowerRateState = \"Off\";\n        break;\n    case 2:\n        msg.payload.DischargePowerRateState = \"Limited Power\";\n        break;\n    case 4:\n        msg.payload.DischargePowerRateState = \"Normal Power\";\n        break;\n    default:\n        msg.payload.DischargePowerRateState = \"Bad\";\n}\n\nswitch(msg.payload.CmuPollerMode) {\n    case 0:\n        msg.payload.CmuPollerMode = \"Idle\";\n        break;\n    case 1:\n        msg.payload.CmuPollerMode = \"Normal\";\n        break;\n    case 2:\n        msg.payload.CmuPollerMode = \" Start collection\";\n        break;\n    case 3:\n        msg.payload.CmuPollerMode = \"Collection running\";\n        break;\n    case 4:\n        msg.payload.CmuPollerMode = \"Start synchronisation\";\n        break;\n    case 5:\n        msg.payload.CmuPollerMode = \"Sync Running\";\n        break;\n    case 6:\n        msg.payload.CmuPollerMode = \"Start NetworkTest\";\n        break;\n    case 7:\n        msg.payload.CmuPollerMode = \"NetworkTest running\";\n        break;\n    case 8:\n        msg.payload.CmuPollerMode = \"Start BypassTest\";\n        break;\n    case 9:\n        msg.payload.CmuPollerMode = \"BypassTest running\";\n        break;\n    case 10:\n        msg.payload.CmuPollerMode = \"Start Reboot All\";\n        break;\n    case 11:\n        msg.payload.CmuPollerMode = \" Reboot All devices\";\n        break;\n    case 12:\n        msg.payload.CmuPollerMode = \" Start Simulator\";\n        break;\n    case 13:\n        msg.payload.CmuPollerMode = \"Simulator running\";\n        break;\n    default:\n        msg.payload.CmuPollerMode = \"Bad\";\n}\n\nswitch(msg.payload.ShuntStatus) {\n    case 0:\n        msg.payload.ShuntStatus = \"Timeout\";\n        break;\n    case 1:\n        msg.payload.ShuntStatus = \"Discharging\";\n        break;\n    case 2:\n        msg.payload.ShuntStatus = \"Idle\";\n        break;\n    case 4:\n        msg.payload.ShuntStatus = \"Charging\";\n        break;\n    default:\n        msg.payload.ShuntStatus = \"Bad\";\n}\n\nswitch(msg.payload.HeatOnState) {\n    case 0:\n        msg.payload.HeatOnState = \"Off\";\n        break;\n    case 1:\n        msg.payload.HeatOnState = \"On\";\n        break;\n    default:\n        msg.payload.HeatOnState = \"Bad\";\n}\n\nswitch(msg.payload.CoolOnState) {\n    case 0:\n        msg.payload.CoolOnState = \"Off\";\n        break;\n    case 1:\n        msg.payload.CoolOnState = \"On\";\n        break;\n    default:\n        msg.payload.CoolOnState = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 360,
+        "wires": [
+            [
+                "21b42f7ef91b092a",
+                "790aa886eb91f88c",
+                "bbf9c2eed320416b",
+                "df83f55acd7c0129",
+                "7bc8d99d0b122969",
+                "d3cac60b9a86f1b9",
+                "df5e286b4aa5da11",
+                "0219af19415c509c",
+                "1da25e88aaa16658",
+                "70bfd9fe7dcb77be"
+            ]
+        ]
+    },
+    {
+        "id": "83ddd89b2f64bd87",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 3340,
+        "wires": []
+    },
+    {
+        "id": "276e4727477233e1",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4033_TelemetrySlowStatus",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Aggregated telemetry\n// Description = Combined status - slow miscellaneous\n// MsgLength   = 66\n// Version     = 3\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t.skip(8)\n\t.uint32le('StartupTime')             // index 8 - Epoch\n\t.int16le('DailySessNumOfRecords')    // index 12\n\t.int16le('DailySessMaxNumOfRecords') // index 14\n\t.uint32le('QuickSessRecentTime')     // index 16 - Epoch\n\t.int16le('QuickSessNumOfRecords')    // index 20\n\t.int16le('QuickSessMaxNumOfRecords') // index 22\n\t.bit1('IsProcessControl')         // boolean index 24 - bit0\n\t.bit1('IsInitialStartup')         // boolean index 24 - bit1\n\t.bit1('IgnoreWhenCellsOverdue')   // boolean index 24 - bit2\n\t.bit1('IgnoreWhenShuntsOverdue')  // boolean index 24 - bit3\n\t.bit1('MonitorDailySessionStats') // boolean index 24 - bit4\n\t.bit3('reserved1')\n\t.skip(1)\n\t.floatle('NomCapacityToEmpty', { formatter: (x) => { return x / 1000; } }) // index 26 - Ah\n\t.skip(8) // acculmNett ADC\n\t.uint32le('ShuntSerialNo') // index 38\n\t.uint32le('ShuntManuCode') // index 42\n\t.int16le('ShuntPartNum')   // index 46\n\t.int16le('ShuntVersCode')  // index 48\n\t.string('ShuntPns1', { encoding: 'utf8', length: 8, stripNull: true }) // index 50\n\t.string('ShuntPns2', { encoding: 'utf8', length: 8, stripNull: true }) // index 58\n\t\t\nmsg.payload = typea.parse(buf);\n// convert date(s)\nmsg.payload.SystemTime = new Date(msg.payload.SystemTime*1000);\nmsg.payload.QuickSessRecentTime = new Date(msg.payload.QuickSessRecentTime*1000);\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 3280,
+        "wires": [
+            [
+                "83ddd89b2f64bd87"
+            ]
+        ]
+    },
+    {
+        "id": "882513bffad80fc8",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "f0dc20bd33318c02",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5432_SessionDailyProgressive",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Telemetry\n// Object      = Daily Session\n// MsgLength   = 69\n// Description = Daily session today in progress calc\n// Version     = 2\n// Frequency   = 20 seconds\n// Support     = Current\n// Valid from  = SW 1.0.30\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.int16le('DailySessionMinCellVolt',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('DailySessionMaxCellVolt',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('DailySessionMinSupplyVolt',\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('DailySessionMaxSupplyVolt',\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8('DailySessionMinReportTemp',\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8('DailySessionMaxReportTemp',\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.int16le('DailySessionMinShuntVolt',\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('DailySessionMaxShuntVolt',\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8('DailySessionMinShuntSoc', \t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.uint8('DailySessionMaxShuntSoc', \t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.uint8('DailySessionThermalBandA',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionThermalBandB',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionThermalBandC',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionThermalBandD',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionThermalBandE',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionThermalBandF',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionThermalBandG',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionThermalBandH',\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandA',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandB',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandC',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandD',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandE',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandF',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandG',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionSocBandH',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.int16le('DailySessionShuntPeakCharge',{ formatter: (x) => {return x/100;}}) // amps\n\t\t.int16le('DailySessionShuntPeakDischg',{ formatter: (x) => {return x/100;}}) // amps\n\t\t.uint8('DailySessionCriticalEvents')\n\t\t.int32le('DailySessionStartTime') \t// Epoch\n\t\t.int32le('DailySessionFinishTime')  // Epoch\n\t\t.floatle('DailySessionCumulShuntAhCharge',{ formatter: (x) => {return x/1000;}})  // Ah\n\t\t.floatle('DailySessionCumulShuntAhDischg',{ formatter: (x) => {return x/1000;}})  // Ah\n\t\t.floatle('DailySessionCumulShuntkWhCharge',{ formatter: (x) => {return x/1000;}}) // kWh\n\t\t.floatle('DailySessionCumulShuntkWhDischg',{ formatter: (x) => {return x/1000;}}) // kWh\n\t\t\n  \nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.DailySessionStartTime = new Date(msg.payload.DailySessionStartTime*1000);\nmsg.payload.DailySessionFinishTime = new Date(msg.payload.DailySessionFinishTime*1000);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 1020,
+        "wires": [
+            [
+                "882513bffad80fc8",
+                "43a149d074534680",
+                "ab7d9fe5ffe8046a"
+            ]
+        ]
+    },
+    {
+        "id": "5f29d93bdf2e1c6f",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5635_MetricsLifetimeA",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n    .skip(8)\n    .uint32le('FirstSyncTime')          // index 8 - Epoch\n    .uint32le('LifeCountStartup')       // index 12\n    .uint32le('LifeCountCriticalBattOk') // index 16\n    .uint32le('LifeCountChargeOn')      // index 20\n    .uint32le('LifeCountChargeLimp')    // index 24\n    .uint32le('LifeCountDischgOn')      // index 28\n    .uint32le('LifeCountDischgLimp')    // index 32\n    .uint32le('LifeCountHeatOn')        // index 36\n    .uint32le('LifeCountCoolOn')        // index 40\n    .int16le('LifeCountDailySession')  // index 44\n    .uint32le('RecentTimeCriticalOn')   // index 46 - Epoch\n    .uint32le('RecentTimeCriticalOff')  // index 50 - Epoch\n    .uint32le('RecentTimeChargeOn')     // index 54 - Epoch\n    .uint32le('RecentTimeChargeOff')    // index 58 - Epoch\n    .uint32le('RecentTimeChargeLimp')   // index 62 - Epoch\n    .uint32le('RecentTimeDischgOn')     // index 66 - Epoch\n    .uint32le('RecentTimeDischgOff')    // index 70 - Epoch\n    .uint32le('RecentTimeDischgLimp')   // index 74 - Epoch\n    .uint32le('RecentTimeHeatOn')       // index 78 - Epoch\n    .uint32le('RecentTimeHeatOff')      // index 82 - Epoch\n    .uint32le('RecentTimeCoolOn')       // index 86 - Epoch\n    .uint32le('RecentTimeCoolOff')      // index 90 - Epoch\n    .uint8('LifetimeSetupVers')         // index 94\n\n  \nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.FirstSyncTime = new Date(msg.payload.FirstSyncTime*1000);\nmsg.payload.RecentTimeCriticalOn = new Date(msg.payload.RecentTimeCriticalOn*1000);\nmsg.payload.RecentTimeCriticalOff = new Date(msg.payload.RecentTimeCriticalOff*1000);\nmsg.payload.RecentTimeChargeOn = new Date(msg.payload.RecentTimeChargeOn*1000);\nmsg.payload.RecentTimeChargeOff = new Date(msg.payload.RecentTimeChargeOff*1000);\nmsg.payload.RecentTimeChargeLimp = new Date(msg.payload.RecentTimeChargeLimp*1000);\nmsg.payload.RecentTimeDischgOn = new Date(msg.payload.RecentTimeDischgOn*1000);\nmsg.payload.RecentTimeDischgOff = new Date(msg.payload.RecentTimeDischgOff*1000);\nmsg.payload.RecentTimeDischgLimp = new Date(msg.payload.RecentTimeDischgLimp*1000);\nmsg.payload.RecentTimeHeatOn = new Date(msg.payload.RecentTimeHeatOn*1000);\nmsg.payload.RecentTimeHeatOff = new Date(msg.payload.RecentTimeHeatOff*1000);\nmsg.payload.RecentTimeCoolOn = new Date(msg.payload.RecentTimeCoolOn*1000);\nmsg.payload.RecentTimeCoolOff = new Date(msg.payload.RecentTimeCoolOff*1000);\nmsg.payload.RecentTimeBypassInitial = new Date(msg.payload.RecentTimeBypassInitial*1000);\nmsg.payload.RecentTimeBypassComplete = new Date(msg.payload.RecentTimeBypassComplete*1000);\nmsg.payload.RecentTimeBypassTest = new Date(msg.payload.RecentTimeBypassTest*1000);\nmsg.payload.RecentTimeWizardSetup = new Date(msg.payload.RecentTimeWizardSetup*1000);\nmsg.payload.RecentTimeBypassExtra = new Date(msg.payload.RecentTimeBypassExtra*1000);\n\nswitch(msg.payload.SystemBypassTestOutcome) {\n    case 0:\n        msg.payload.SystemBypassTestOutcome = \"NotTested\";\n        break;\n    case 1:\n        msg.payload.SystemBypassTestOutcome = \"Preparing\";\n        break;\n    case 2:\n        msg.payload.SystemBypassTestOutcome = \"Testing\";\n        break;\n    case 3:\n        msg.payload.SystemBypassTestOutcome = \"PassOk\";\n        break;\n    case 4:\n        msg.payload.SystemBypassTestOutcome = \"Failed\";\n        break;\n    default:\n        msg.payload.SystemBypassTestOutcome = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 3480,
+        "wires": [
+            [
+                "8b5caf088153f07d"
+            ]
+        ]
+    },
+    {
+        "id": "8b5caf088153f07d",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 3540,
+        "wires": []
+    },
+    {
+        "id": "85866ba4e0b35f33",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4a36_HwSystemSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Hardware Configuration\n// Object      = System\n// MsgLength   = 82\n// Description = System setup configuration\n// Version     = 6\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.int16le('HwSystemSetupVers')\n\t\t.string('SystemCode', \t{ encoding: 'ascii', length: 8 })\n\t\t.string('SysName', \t\t{ encoding: 'ascii', length: 20 })\n\t\t.string('AssetCode', \t{ encoding: 'ascii', length: 20 })\n\t\t.uint8('AllowTechAuth') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8('AllowQuickSession') \t// boolean 0 = Off , 1 = On\n\t\t.uint32le('QuickSessionInterval', { formatter: (x) => {return x/1000;}})  // seconds\n\t\t.int16le('SystemPresetId')\n\t\t.int16le('SystemFirmwareVersion')\n\t\t.int16le('SystemHardwareVersion')\n\t\t.uint32le('SystemSerialNo')\n\t\t.uint8('ShowScheduler') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8('ShowStripCycle') \t\t// boolean 0 = Off , 1 = On\n\t\t\nmsg.payload = typea.parse(buf);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 2280,
+        "wires": [
+            [
+                "7f26295f0cc5d27d"
+            ]
+        ]
+    },
+    {
+        "id": "7f26295f0cc5d27d",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 2340,
+        "wires": []
+    },
+    {
+        "id": "1f4bf1598d8615df",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4d34_HwExpansionSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\t// Category    = Hardware Configuration\n\t// Object      = Expansion\n\t// MsgLength   = 32\n\t// Description = Hardware Expansion setup configuration\n\t// Version     = 3\n\t// Frequency   = 20 seconds\n\t// Support     = Current\n\t// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8('HwExpansionSetupVers')  \n\t\t.uint8('HwExpansionTemplate')  /* ExtensionTemplateOptions\n\t\t\t\tNone = 0,\n\t\t\t\tExpansionBoard 12v = 1,\n\t\t\t\tExpansionBoard 48v = 2,\n\t\t\t\tWatchMonCmC v2.0   = 3,\t*/\t\n\t\t.uint8('HwExpansionNeoPixelMode')  /* NeoPixelExtStatusModes\n\t\t\t\tNone \t\t\t\t= 0,\n\t\t\t\tRepeat \t\t\t\t= 1,\n\t\t\t\tStatus + 7seg SoC% \t= 2,\n\t\t\t\tSolid SoC% 8seg \t= 3,\t*/\n\t\t.uint8('HwExpansionRelay1')  /* ExpansionOutputAssignments\n\t\t\t\tNone = 0,\n\t\t\t\tManualOn = 1,\n\t\t\t\tCritical BattOk = 2,\n\t\t\t\tCharging On = 4,\n\t\t\t\tDischarging On = 5,\n\t\t\t\tHeating Required = 6,\n\t\t\t\tCooling Required = 7,\n\t\t\t\tRun / Idle input = 8,\n\t\t\t\tCharge / Normal input = 9,\n\t\t\t\tBypass Complete = 10,\n\t\t\t\tCharging Limited = 11,\n\t\t\t\tDischarging Limited = 12,\n\t\t\t\tCritical Recovery = 13,\n\t\t\t\tCritical PulseOn = 14,\n\t\t\t\tCritical PulseOff = 15,\n\t\t\t\tCritical Fault = 16,\n\t\t\t\tCritical PrechargeTimer = 17, */\n\t\t.uint8('HwExpansionRelay2')  \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionRelay3')  \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionRelay4')\t\t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionSSR5')  \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionSSR6')  \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionSSR7')  \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionOutput8')  \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionOutput9')  \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionOutput10') \t/* ExpansionOutputAssignments */\n\t\t.uint8('HwExpansionInput1')  \t/* ExtensionInputOptions\n\t\t\t\tNone \t\t\t\t\t= 0,\n\t\t\t\tRun / Idle mode \t\t= 1,\n\t\t\t\tCharge / Normal mode \t= 2,\n\t\t\t\tCritical contact sensor - On = 3,\n\t\t\t\tCritical contact sensor - Fault = 4, */\n\t\t.uint8('HwExpansionInput2')  \t/* ExtensionInputOptions */\n\t\t.uint8('HwExpansionInput3')  \t/* ExtensionInputOptions */\n\t\t.uint8('HwExpansionInput4')  \t/* ExtensionInputOptions */\n\t\t.uint8('HwExpansionInput5')  \t/* ExtensionInputOptions */\n\t\t.uint8('HwExpansionInputAIN1') \n\t\t.uint8('HwExpansionInputAIN2') \n\t\t.int16le('HwExpansionCustomFeature1')\n\t\t.int16le('HwExpansionCustomFeature2')\n\n  \nmsg.payload = typea.parse(buf);\n\n\nswitch(msg.payload.HwExpansionTemplate) {\n    case 0:\n        msg.payload.HwExpansionTemplate = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionTemplate = \"ExpansionBoard 12v\";\n        break;\n    case 2:\n        msg.payload.HwExpansionTemplate = \"ExpansionBoard 48v\";\n        break;\n    case 3:\n        msg.payload.HwExpansionTemplate = \"WatchMonCmC v2.0\";\n        break;\n    default:\n        msg.payload.HwExpansionTemplate = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionNeoPixelMode) {\n    case 0:\n        msg.payload.HwExpansionNeoPixelMode = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionNeoPixelMode = \"Repeat\";\n        break;\n    case 2:\n        msg.payload.HwExpansionNeoPixelMode = \"Status + 7seg SoC%\";\n        break;\n    case 3:\n        msg.payload.HwExpansionNeoPixelMode = \"Solid SoC% 8seg\";\n        break;\n    default:\n        msg.payload.HwExpansionNeoPixelMode = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionRelay1) {\n    case 0:\n        msg.payload.HwExpansionRelay1 = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionRelay1 = \"ManualOn\";\n        break;\n    case 2:\n        msg.payload.HwExpansionRelay1 = \"Critical BattOk\";\n        break;\n    case 3:\n        msg.payload.HwExpansionRelay1 = \"Charging On\";\n        break;\n    case 4:\n        msg.payload.HwExpansionRelay1 = \"Discharging On\";\n        break;\n    case 5:\n        msg.payload.HwExpansionRelay1 = \"Heating Required\";\n        break;\n    case 6:\n        msg.payload.HwExpansionRelay1 = \"Cooling Required\";\n        break;\n    case 7:\n        msg.payload.HwExpansionRelay1 = \"Run / Idle input\";\n        break;\n    case 8:\n        msg.payload.HwExpansionRelay1 = \"Charge / Normal input\";\n        break;\n    case 9:\n        msg.payload.HwExpansionRelay1 = \"Bypass Complete\";\n        break;\n    case 10:\n        msg.payload.HwExpansionRelay1 = \"Charging Limited\";\n        break;\n    case 11:\n        msg.payload.HwExpansionRelay1 = \"Discharging Limited\";\n        break;\n    case 12:\n        msg.payload.HwExpansionRelay1 = \"Critical Recovery\";\n        break;\n    case 13:\n        msg.payload.HwExpansionRelay1 = \"Critical PulseOn\";\n        break;\n    case 14:\n        msg.payload.HwExpansionRelay1 = \"Critical PulseOff\";\n        break;\n    case 105:\n        msg.payload.HwExpansionRelay1 = \"Critical Fault\";\n        break;\n    case 16:\n        msg.payload.HwExpansionRelay1 = \"Critical PrechargeTimer\";\n        break;\n    default:\n        msg.payload.HwExpansionRelay1 = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionRelay2) {\n    case 0:\n        msg.payload.HwExpansionRelay2 = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionRelay2 = \"ManualOn\";\n        break;\n    case 2:\n        msg.payload.HwExpansionRelay2 = \"Critical BattOk\";\n        break;\n    case 3:\n        msg.payload.HwExpansionRelay2 = \"Charging On\";\n        break;\n    case 4:\n        msg.payload.HwExpansionRelay2 = \"Discharging On\";\n        break;\n    case 5:\n        msg.payload.HwExpansionRelay2 = \"Heating Required\";\n        break;\n    case 6:\n        msg.payload.HwExpansionRelay2 = \"Cooling Required\";\n        break;\n    case 7:\n        msg.payload.HwExpansionRelay2 = \"Run / Idle input\";\n        break;\n    case 8:\n        msg.payload.HwExpansionRelay2 = \"Charge / Normal input\";\n        break;\n    case 9:\n        msg.payload.HwExpansionRelay2 = \"Bypass Complete\";\n        break;\n    case 10:\n        msg.payload.HwExpansionRelay2 = \"Charging Limited\";\n        break;\n    case 11:\n        msg.payload.HwExpansionRelay2 = \"Discharging Limited\";\n        break;\n    case 12:\n        msg.payload.HwExpansionRelay2 = \"Critical Recovery\";\n        break;\n    case 13:\n        msg.payload.HwExpansionRelay2 = \"Critical PulseOn\";\n        break;\n    case 14:\n        msg.payload.HwExpansionRelay2 = \"Critical PulseOff\";\n        break;\n    case 105:\n        msg.payload.HwExpansionRelay2 = \"Critical Fault\";\n        break;\n    case 16:\n        msg.payload.HwExpansionRelay2 = \"Critical PrechargeTimer\";\n        break;\n    default:\n        msg.payload.HwExpansionRelay2 = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionRelay3) {\n    case 0:\n        msg.payload.HwExpansionRelay3 = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionRelay3 = \"ManualOn\";\n        break;\n    case 2:\n        msg.payload.HwExpansionRelay3 = \"Critical BattOk\";\n        break;\n    case 3:\n        msg.payload.HwExpansionRelay3 = \"Charging On\";\n        break;\n    case 4:\n        msg.payload.HwExpansionRelay3 = \"Discharging On\";\n        break;\n    case 5:\n        msg.payload.HwExpansionRelay3 = \"Heating Required\";\n        break;\n    case 6:\n        msg.payload.HwExpansionRelay3 = \"Cooling Required\";\n        break;\n    case 7:\n        msg.payload.HwExpansionRelay3 = \"Run / Idle input\";\n        break;\n    case 8:\n        msg.payload.HwExpansionRelay3 = \"Charge / Normal input\";\n        break;\n    case 9:\n        msg.payload.HwExpansionRelay3 = \"Bypass Complete\";\n        break;\n    case 10:\n        msg.payload.HwExpansionRelay3 = \"Charging Limited\";\n        break;\n    case 11:\n        msg.payload.HwExpansionRelay3 = \"Discharging Limited\";\n        break;\n    case 12:\n        msg.payload.HwExpansionRelay3 = \"Critical Recovery\";\n        break;\n    case 13:\n        msg.payload.HwExpansionRelay3 = \"Critical PulseOn\";\n        break;\n    case 14:\n        msg.payload.HwExpansionRelay3 = \"Critical PulseOff\";\n        break;\n    case 105:\n        msg.payload.HwExpansionRelay3 = \"Critical Fault\";\n        break;\n    case 16:\n        msg.payload.HwExpansionRelay3 = \"Critical PrechargeTimer\";\n        break;\n    default:\n        msg.payload.HwExpansionRelay3 = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionSSR5) {\n    case 0:\n        msg.payload.HwExpansionSSR5 = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionSSR5 = \"ManualOn\";\n        break;\n    case 2:\n        msg.payload.HwExpansionSSR5 = \"Critical BattOk\";\n        break;\n    case 3:\n        msg.payload.HwExpansionSSR5 = \"Charging On\";\n        break;\n    case 4:\n        msg.payload.HwExpansionSSR5 = \"Discharging On\";\n        break;\n    case 5:\n        msg.payload.HwExpansionSSR5 = \"Heating Required\";\n        break;\n    case 6:\n        msg.payload.HwExpansionSSR5 = \"Cooling Required\";\n        break;\n    case 7:\n        msg.payload.HwExpansionSSR5 = \"Run / Idle input\";\n        break;\n    case 8:\n        msg.payload.HwExpansionSSR5 = \"Charge / Normal input\";\n        break;\n    case 9:\n        msg.payload.HwExpansionSSR5 = \"Bypass Complete\";\n        break;\n    case 10:\n        msg.payload.HwExpansionSSR5 = \"Charging Limited\";\n        break;\n    case 11:\n        msg.payload.HwExpansionSSR5 = \"Discharging Limited\";\n        break;\n    case 12:\n        msg.payload.HwExpansionSSR5 = \"Critical Recovery\";\n        break;\n    case 13:\n        msg.payload.HwExpansionSSR5 = \"Critical PulseOn\";\n        break;\n    case 14:\n        msg.payload.HwExpansionSSR5 = \"Critical PulseOff\";\n        break;\n    case 105:\n        msg.payload.HwExpansionSSR5 = \"Critical Fault\";\n        break;\n    case 16:\n        msg.payload.HwExpansionSSR5 = \"Critical PrechargeTimer\";\n        break;\n    default:\n        msg.payload.HwExpansionSSR5 = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionSSR6) {\n    case 0:\n        msg.payload.HwExpansionSSR6 = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionSSR6 = \"ManualOn\";\n        break;\n    case 2:\n        msg.payload.HwExpansionSSR6 = \"Critical BattOk\";\n        break;\n    case 3:\n        msg.payload.HwExpansionSSR6 = \"Charging On\";\n        break;\n    case 4:\n        msg.payload.HwExpansionSSR6 = \"Discharging On\";\n        break;\n    case 5:\n        msg.payload.HwExpansionSSR6 = \"Heating Required\";\n        break;\n    case 6:\n        msg.payload.HwExpansionSSR6 = \"Cooling Required\";\n        break;\n    case 7:\n        msg.payload.HwExpansionSSR6 = \"Run / Idle input\";\n        break;\n    case 8:\n        msg.payload.HwExpansionSSR6 = \"Charge / Normal input\";\n        break;\n    case 9:\n        msg.payload.HwExpansionSSR6 = \"Bypass Complete\";\n        break;\n    case 10:\n        msg.payload.HwExpansionSSR6 = \"Charging Limited\";\n        break;\n    case 11:\n        msg.payload.HwExpansionSSR6 = \"Discharging Limited\";\n        break;\n    case 12:\n        msg.payload.HwExpansionSSR6 = \"Critical Recovery\";\n        break;\n    case 13:\n        msg.payload.HwExpansionSSR6 = \"Critical PulseOn\";\n        break;\n    case 14:\n        msg.payload.HwExpansionSSR6 = \"Critical PulseOff\";\n        break;\n    case 105:\n        msg.payload.HwExpansionSSR6 = \"Critical Fault\";\n        break;\n    case 16:\n        msg.payload.HwExpansionSSR6 = \"Critical PrechargeTimer\";\n        break;\n    default:\n        msg.payload.HwExpansionSSR6 = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionSSR7) {\n    case 0:\n        msg.payload.HwExpansionSSR7 = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionSSR7 = \"ManualOn\";\n        break;\n    case 2:\n        msg.payload.HwExpansionSSR7 = \"Critical BattOk\";\n        break;\n    case 3:\n        msg.payload.HwExpansionSSR7 = \"Charging On\";\n        break;\n    case 4:\n        msg.payload.HwExpansionSSR7 = \"Discharging On\";\n        break;\n    case 5:\n        msg.payload.HwExpansionSSR7 = \"Heating Required\";\n        break;\n    case 6:\n        msg.payload.HwExpansionSSR7 = \"Cooling Required\";\n        break;\n    case 7:\n        msg.payload.HwExpansionSSR7 = \"Run / Idle input\";\n        break;\n    case 8:\n        msg.payload.HwExpansionSSR7 = \"Charge / Normal input\";\n        break;\n    case 9:\n        msg.payload.HwExpansionSSR7 = \"Bypass Complete\";\n        break;\n    case 10:\n        msg.payload.HwExpansionSSR7 = \"Charging Limited\";\n        break;\n    case 11:\n        msg.payload.HwExpansionSSR7 = \"Discharging Limited\";\n        break;\n    case 12:\n        msg.payload.HwExpansionSSR7 = \"Critical Recovery\";\n        break;\n    case 13:\n        msg.payload.HwExpansionSSR7 = \"Critical PulseOn\";\n        break;\n    case 14:\n        msg.payload.HwExpansionSSR7 = \"Critical PulseOff\";\n        break;\n    case 105:\n        msg.payload.HwExpansionSSR7 = \"Critical Fault\";\n        break;\n    case 16:\n        msg.payload.HwExpansionSSR7 = \"Critical PrechargeTimer\";\n        break;\n    default:\n        msg.payload.HwExpansionSSR7 = \"Bad\";\n}\n\nswitch(msg.payload.HwExpansionInput1) {\n    case 0:\n        msg.payload.HwExpansionInput1 = \"None\";\n        break;\n    case 1:\n        msg.payload.HwExpansionInput1 = \"Run / Idle mode\";\n        break;\n    case 2:\n        msg.payload.HwExpansionInput1 = \"Charge / Normal mode\";\n        break;\n    case 3:\n        msg.payload.HwExpansionInput1 = \"Critical contact sensor - On\";\n        break;\n    case 4:\n        msg.payload.HwExpansionInput1 = \"Critical contact sensor - Fault\";\n        break;\n    default:\n        msg.payload.HwExpansionInput1 = \"Bad\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 2580,
+        "wires": [
+            [
+                "74ee4d774c22a287"
+            ]
+        ]
+    },
+    {
+        "id": "74ee4d774c22a287",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "92650f9dacb6257b",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4b36_HwCellGroupSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Hardware Configuration\n// Object      = Cellmon\n// MsgLength   = 54\n// Description = Hardware cellmon setup configuration\n// Version     = 6\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8('HwCellmonSetupVers')  \n\t\t.uint8('HwCellmonBattTypeID')  /* BattTypes\n\t\t\t\tCustom \t\t\t\t= 0,\n\t\t\t\tLi-FePO4 Typical \t= 1,\n\t\t\t\tLi-Ion Performance \t= 2,\n\t\t\t\tLi-Ion LongLife \t= 3, \n\t\t\t\tLi-FePO4 Longlife \t= 4, */\n\t\t.uint8(  'HwCellmonFirstID')  \n\t\t.uint8(  'HwCellmonLastID')  \t\n\t\t.int16le('HwCellmonNomCellVolt', \t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonLoCellVolt', \t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonHiCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonBypassVoltLevel',\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonBypassAmpLimit', \t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8( 'HwCellmonBypassTempLimit',\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8( 'HwCellmonLoCellTemp',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8( 'HwCellmonHiCellTemp',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8( 'HwCellmonDiffNomCellsInSeries')  \t// Boolean 0 = Off , 1 = On\n\t\t.uint8( 'HwCellmonNomCellsInSeries') \n\t\t.uint8( 'HwCellmonAllowEntireRange')  \t\t// Boolean 0 = Off , 1 = On\n\t\t.uint8( 'HwCellmonEntireFirstID')  \n\t\t.uint8( 'HwCellmonEntireLastID')  \n\t\t.uint8( 'HwCellmonBypassExtraMode')  /* BypassExtraModes\n\t\t\t\tNone \t\t\t= 0,\n\t\t\t\tIdle Shunt \t\t= 1,\n\t\t\t\tSame CellVolt \t= 2,\n\t\t\t\tAutoLevel \t\t= 3, */\n\t\t.int16le('HwCellmonBypassExtraInterval',\t\t{ formatter: (x) => {return x/1000;}}) \t// seconds\n\t\t.uint8(  'HwCellmonCellMonTypeID')  /* CellMonTypes\n\t\t\t\tCustom \t\t= 0,\n\t\t\t\tGenMon 2W \t= 1,\n\t\t\t\tGenMon 8W \t= 2,\n\t\t\t\tLongMon \t= 3,\n\t\t\t\tBlockMonM8 \t= 4,\n\t\t\t\tBlockMonM14 = 5,\n\t\t\t\tEndMon \t\t= 6,\n\t\t\t\tManyMon \t= 7, */\n\t\t.floatle('HwCellmonBypassImpedance', \t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonBypassLoVoltCutout', \t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonBypassShuntChargeLimit', \t{ formatter: (x) => {return x/100;}}) \t// amps\n\t\t.int16le('HwCellmonBypassShuntDischgLimit', \t{ formatter: (x) => {return x/100;}}) \t// amps\n\t\t.uint8(  'HwCellmonBypassShuntSocLo', \t\t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.int16le('HwCellmonBypassCellVoltBanding', \t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonBypassCellVoltDiff', \t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('HwCellmonBypassStableInterval',\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.int16le('HwCellmonBypassExtraAmpLimit', \t\t{ formatter: (x) => {return x/1000;}}) // amps\n\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.HwCellmonBattTypeID) {\n    case 0:\n        msg.payload.HwCellmonBattTypeID = \"Custom\";\n        break;\n    case 1:\n        msg.payload.HwCellmonBattTypeID = \"Li-FePO4 Typical\";\n        break;\n    case 2:\n        msg.payload.HwCellmonBattTypeID = \"Li-Ion Performance\";\n        break;\n    case 3:\n        msg.payload.HwCellmonBattTypeID = \"Li-Ion LongLife\";\n        break;\n    case 4:\n        msg.payload.HwCellmonBattTypeID = \"Li-FePO4 Longlife\";\n        break;\n    default:\n        msg.payload.HwCellmonBattTypeID = \"Bad\";\n}\n\nswitch(msg.payload.HwCellmonBypassExtraMode) {\n    case 0:\n        msg.payload.HwCellmonBypassExtraMode = \"None\";\n        break;\n    case 1:\n        msg.payload.HwCellmonBypassExtraMode = \"Idle Shunt\";\n        break;\n    case 2:\n        msg.payload.HwCellmonBypassExtraMode = \"Same CellVolt\";\n        break;\n    case 3:\n        msg.payload.HwCellmonBypassExtraMode = \"AutoLevel\";\n        break;\n    default:\n        msg.payload.HwCellmonBypassExtraMode = \"Bad\";\n}\n\nswitch(msg.payload.HwCellmonCellMonTypeID) {\n    case 0:\n        msg.payload.HwCellmonCellMonTypeID = \"Custom\";\n        break;\n    case 1:\n        msg.payload.HwCellmonCellMonTypeID = \"GenMon 2W\";\n        break;\n    case 2:\n        msg.payload.HwCellmonCellMonTypeID = \"GenMon 8W\";\n        break;\n    case 3:\n        msg.payload.HwCellmonCellMonTypeID = \"LongMon\";\n        break;\n    case 4:\n        msg.payload.HwCellmonCellMonTypeID = \"BlockMonM8\";\n        break;\n    case 5:\n        msg.payload.HwCellmonCellMonTypeID = \"BlockMonM14\";\n        break;\n    case 6:\n        msg.payload.HwCellmonCellMonTypeID = \"EndMon\";\n        break;\n    case 7:\n        msg.payload.HwCellmonCellMonTypeID = \"ManyMon\";\n        break;\n    default:\n        msg.payload.HwCellmonCellMonTypeID = \"Bad\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 2380,
+        "wires": [
+            [
+                "c70cdc8459cc92b7"
+            ]
+        ]
+    },
+    {
+        "id": "da5ba3b536220463",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4c34_HwShuntSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Hardware Configuration\n// Object      = Shunt\n// MsgLength   = 68\n// Description = Hardware shunt setup configuration\n// Version     = 4\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n    .skip(8)\n    .uint8('HwShuntShuntType')  /* ShuntTypes\n            None                            = 0,\n            SFP102MOD 100uOhm 375A 150V     = 1,\n            SFP101EVB 72uOhm 500A 150V      = 2,\n            SFP101EVB 25uOhm 1500A 150V     = 3,\n            SFP102MOD (4k) 375A 750V        = 4,\n            SFP102MOD (3k) 375A 600V        = 5,\n            SFP102MOD Negative volt sense   = 6,\n            SFP102MOD 50uOhm 750A 150V      = 7,\n            ShuntMon2 50uOhm 500A 650V      = 16, \n            ShuntMon2 50uOhm 1000A 650V     = 17, \n            ShuntMon2 50uOhm 2000A 650V     = 18, \n            ShuntMon2 50uOhm 250A 650V      = 19,\n            Simulator 15sec quick curve     = 33,\n            Simulator 5min normal curve     = 34, */\n    .int16le('HwShuntScale16volt') // index 9\n    .int16le('HwShuntScale16amp')  // index 11\n    .int16le('HwShuntChargeIdle',   { formatter: (x) => {return x/100;}})   // index 13 - ampere\n    .int16le('HwShuntDischgIdle',   { formatter: (x) => {return x/100;}})   // index 15 - ampere\n    .uint8( 'HwShuntSocCountLo',    { formatter: (x) => {return (x-5)/2;}}) // index 17 - percent\n    .uint8( 'HwShuntSocCountHi',    { formatter: (x) => {return (x-5)/2;}}) // index 18 - percent\n    .uint8( 'HwShuntSocLoRecal',    { formatter: (x) => {return (x-5)/2;}}) // index 19 - percent\n    .uint8( 'HwShuntSocHiRecal',    { formatter: (x) => {return (x-5)/2;}}) // index 20 - percent\n    .uint8( 'HwShuntMonitorSocLoRecal')     // boolean 0 = Off , 1 = On\n    .uint8( 'HwShuntMonitorSocHiRecal')     // boolean 0 = Off , 1 = On\n    .uint8( 'HwShuntMonitorInBypassRecal')  // boolean 0 = Off , 1 = On\n    .floatle('HwShuntNomCapacity',  { formatter: (x) => {return x/1000;}})  // Ah\n    .floatle('HwShuntGainVolt')\n    .floatle('HwShuntGainAmp')\n    .floatle('HwShuntGainAcculm')   // mAh\n    .floatle('HwShuntGainTemp')     // temperature ºC\n    .uint8( 'HwShuntReverseFlow')   // boolean 0 = Off , 1 = On\n    .uint8( 'HwShuntSetupVers')\n    .floatle('HwShuntGainVA')\n    .floatle('HwShuntGainVAh')\n    .int16le('HwShuntMax16volt')    // index 54\n    .int16le('HwShuntMax16charge')  // index 56\n    .int16le('HwShuntMax16dischg')  // index 58\n    .uint8('HwShuntFilterVolt')  /* ShuntFilterVoltModes\n            Live            = 0,\n            Limit Jittle    = 1,\n            Running 5       = 2,\n            Running 10      = 3, */\n    .uint8('HwShuntFilterAmp')  /* ShuntFilterAmpModes\n            Live                = 0,\n            Elapse 200mS        = 1,\n            Elapse 1 seconds    = 2,\n            Elapse 5 seconds    = 3, */\n    .int16le('HwShuntScale16pw')  // index 62\n    .int16le('HwShuntMaxPw16charge') // index 64\n    .int16le('HwShuntMaxPw16dischg') // index 66\n\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.HwShuntShuntType) {\n    case 0:\n        msg.payload.HwShuntShuntType = \"None\";\n        break;\n    case 1:\n        msg.payload.HwShuntShuntType = \"SFP102MOD 100uOhm 375A 150V\";\n        break;\n    case 2:\n        msg.payload.HwShuntShuntType = \"SFP101EVB 72uOhm 500A 150V\";\n        break;\n    case 3:\n        msg.payload.HwShuntShuntType = \"SFP101EVB 25uOhm 1500A 150V\";\n        break;\n    case 4:\n        msg.payload.HwShuntShuntType = \"SFP102MOD (4k) 375A 750V\";\n        break;\n    case 5:\n        msg.payload.HwShuntShuntType = \"SFP102MOD (3k) 375A 600V\";\n        break;\n    case 6:\n        msg.payload.HwShuntShuntType = \"SFP102MOD Negative volt sense\";\n        break;\n    case 7:\n        msg.payload.HwShuntShuntType = \"SFP102MOD 50uOhm 750A 150V\";\n        break;\n    case 16:\n        msg.payload.HwShuntShuntType = \"ShuntMon2 50uOhm 500A 650V\";\n        break;\n    default:\n        msg.payload.HwShuntShuntType = \"Bad\";\n}\n\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 2480,
+        "wires": [
+            [
+                "4b48b70d9825d729"
+            ]
+        ]
+    },
+    {
+        "id": "806f6815f3cc7746",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5335_HwIntegrationSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Hardware Configuration\n// Object      = Integration\n// MsgLength   = 28\n// Description = Hardware Integration setup configuration\n// Version     = 5\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n    .skip(8)\n    .uint8('HwIntegrationSetupVers')\n    .uint8('HwIntegrationUsbTxBroadcast')       // boolean 0 = Off , 1 = On\n    .uint8('HwIntegrationWifiUdpTxBroadcast')   // boolean 0 = Off , 1 = On\n    .uint8('HwIntegrationWifiBroadcastMode') /* WifiBroadcastModes\n            None        = 0, NOUDP\n            Verbose     = 1,\n            Verbose ReadOnly = 4,\n            Limited     = 2,\n            Disabled    = 3, \n            SoftApOnly  = 5, */\n    .uint8('HwIntegrationCanbusTxBroadcast')    // boolean 0 = Off , 1 = On\n    .uint8('HwIntegrationCanbusMode') /* CanbusModes\n            None        = 0,\n            Native      = 1,\n            Elcon TCCharger 250k = 2,\n            EnPower Charger 500k = 3,\n            Solax PowerSK control = 4,\n            Sma SunnyIsland V31 = 5,\n            Brusa NLG5  = 6,\n            EnPower Charger 250k = 7,\n            Solax PowerSK Limited = 8,\n            Brusa NLG6  = 9,\n            Project Lychee = 10,\n            Eltek FlatPack2 HE2000/48 = 11,\n            Victron = 15,\n            Native2 = 17,\n            Goodwe = 18,\n            SofarME3000SP = 20,\n            PylonTechSMA = 21,\n            MultiMon = 23,\n            Victron Master = 24,\n            Elcon TCCharger 500k = 25,  */\n    .uint32le('HwIntegrationCanbusRemoteAddr') // index 14\n    .uint32le('HwIntegrationCanbusBaseAddr')   // index 18\n    .uint32le('HwIntegrationCanbusGroupAddr')  // index 22\n    .uint8('HwIntegrationMqttTxBroadcast')  // index 26 - boolean 0 = Off , 1 = On\n    .uint8('HwIntegrationMqttBroadcastMode') /* WifiBroadcastModes\n            Disabled    = 0,\n            Normal      = 1,\n            Verbose     = 2,\n            Verbose ReadOnly = 3, */\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.HwIntegrationWifiBroadcastMode) {\n    case 0:\n        msg.payload.HwIntegrationWifiBroadcastMode = \"None\";\n        break;\n    case 1:\n        msg.payload.HwIntegrationWifiBroadcastMode = \"Verbose\";\n        break;\n    case 2:\n        msg.payload.HwIntegrationWifiBroadcastMode = \"Limited\";\n        break;\n    case 3:\n        msg.payload.HwIntegrationWifiBroadcastMode = \"Disabled\";\n        break;\n    case 4:\n        msg.payload.HwIntegrationWifiBroadcastMode = \"Verbose ReadOnly\";\n        break;\n    default:\n        msg.payload.HwIntegrationWifiBroadcastMode = \"Bad\";\n}\n\nswitch(msg.payload.HwIntegrationCanbusMode) {\n    case 0:\n        msg.payload.HwIntegrationCanbusMode = \"None\";\n        break;\n    case 1:\n        msg.payload.HwIntegrationCanbusMode = \"Native\";\n        break;\n    case 2:\n        msg.payload.HwIntegrationCanbusMode = \"Elcon TCCharger 250k\";\n        break;\n    case 3:\n        msg.payload.HwIntegrationCanbusMode = \"EnPower Charger500k\";\n        break;\n    case 4:\n        msg.payload.HwIntegrationCanbusMode = \"Solax PowerSK control\";\n        break;\n    case 5:\n        msg.payload.HwIntegrationCanbusMode = \"Sma SunnyIsland V31\";\n        break;\n    case 6:\n        msg.payload.HwIntegrationCanbusMode = \"Brusa NLG5\";\n        break;\n    case 7:\n        msg.payload.HwIntegrationCanbusMode = \"EnPower Charger 250k\";\n        break;\n    case 8:\n        msg.payload.HwIntegrationCanbusMode = \"Solax PowerSK Limited\";\n        break;\n    case 9:\n        msg.payload.HwIntegrationCanbusMode = \"Brusa NLG6\";\n        break;\n    case 10:\n        msg.payload.HwIntegrationCanbusMode = \"Project Lychee\";\n        break;\n    case 11:\n        msg.payload.HwIntegrationCanbusMode = \"Eltek FlatPack2 HE2000/48\";\n        break;\n    case 15:\n        msg.payload.HwIntegrationCanbusMode = \"Victron\";\n        break;\n    case 17:\n        msg.payload.HwIntegrationCanbusMode = \"Native2\";\n        break;\n    case 18:\n        msg.payload.HwIntegrationCanbusMode = \"Goodwe\";\n        break;\n    case 20:\n        msg.payload.HwIntegrationCanbusMode = \"SofarME3000SP\";\n        break;\n    case 21:\n        msg.payload.HwIntegrationCanbusMode = \"PylonTechSMA\";\n        break;\n    case 23:\n        msg.payload.HwIntegrationCanbusMode = \"MultiMon\";\n        break;\n    case 24:\n        msg.payload.HwIntegrationCanbusMode = \"Victron Master\";\n        break;\n    case 25:\n        msg.payload.HwIntegrationCanbusMode = \"Elcon TCCharger 500k\";\n        break;\n    case 42:\n        msg.payload.HwIntegrationCanbusMode = \"Project42\";\n        break;\n    default:\n        msg.payload.HwIntegrationCanbusMode = \"Bad\";\n}\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 2680,
+        "wires": [
+            [
+                "35374d822f207811"
+            ]
+        ]
+    },
+    {
+        "id": "35374d822f207811",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 2740,
+        "wires": []
+    },
+    {
+        "id": "5613f06f5e8707c0",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4f33_ControlCriticalSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Control Configuration\n// Object      = Critical\n// MsgLength   = 75\n// Description = Control Critical setup configuration\n// Version     = 3\n// Frequency   = 20 seconds\n// Support     = Current\n// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8( 'ControlCriticalMode')   /* Choices ControlCriticalModes\n\t\t\t\tAuto \t\t\t= 0,\n\t\t\t\tManually On \t= 1,\n\t\t\t\tManually Off  \t= 2, */\t\n\t\t.uint8( 'ControlCriticalAutoRecovery')  \t\t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalIgnoreCellsOverdue') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalMonitorCellVoltLo') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalMonitorCellVoltHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlCriticalCellVoltLo',\t\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('ControlCriticalCellVoltHi',\t\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8( 'ControlCriticalMonitorCellTempLo') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalMonitorCellTempHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalCellTempLo',\t\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8( 'ControlCriticalCellTempHi',\t\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8( 'ControlCriticalMonitorSupplyLo') \t\t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalMonitorSupplyHi') \t\t\t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlCriticalSupplyVoltLo',\t\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('ControlCriticalSupplyVoltHi',\t\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8( 'ControlCriticalMonitorAmbientLo') \t\t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalMonitorAmbientHi') \t\t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalAmbientTempLo',\t\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8( 'ControlCriticalAmbientTempHi',\t\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8( 'ControlCriticalMonitorShuntVoltLo') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalMonitorShuntVoltHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8( 'ControlCriticalMonitorShuntVoltLoIdle') \t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlCriticalShuntVoltLo',\t\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('ControlCriticalShuntVoltHi',\t\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('ControlCriticalShuntVoltLoIdle',\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8(  'ControlCriticalMonitorShuntPeakCharge') \t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlCriticalShuntPeakCharge',\t\t\t{ formatter: (x) => {return x/100;}}) // amps\n\t\t.int16le('ControlCriticalShuntCrateCharge',\t\t\t{ formatter: (x) => {return x/100;}}) // ratio\n\t\t.uint8(  'ControlCriticalMonitorShuntPeakDischg') \t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlCriticalShuntPeakDischg',\t\t\t{ formatter: (x) => {return x/100;}}) // amps\n\t\t.int16le('ControlCriticalShuntCrateDischg',\t\t\t{ formatter: (x) => {return x/100;}}) // ratio\n\t\t.uint32le('ControlCriticalStopInterval',\t\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint32le('ControlCriticalStartInterval',\t\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint32le('ControlCriticalTimeoutManualOverride',\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint32le('ControlCriticalPrechargeTimeInterval',\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint8(  'ControlCriticalIgnoreShuntOverdue') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlCriticalIgnoreRemoteOverdue') \t\t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlCriticalRecoverSupplyGapVolt',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('ControlCriticalRecoverShuntChargeLimit',\t{ formatter: (x) => {return x/100;}}) // amps\n\t\t.int16le('ControlCriticalRecoverShuntDischgLimit',\t{ formatter: (x) => {return x/100;}}) // amps\n\t\t.uint8(  'ControlCriticalSetupVers') \n\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.ControlCriticalMode) {\n    case 0:\n        msg.payload.ControlCriticalMode = \"Auto\";\n        break;\n    case 1:\n        msg.payload.ControlCriticalMode = \"Manually On\";\n        break;\n    case 2:\n        msg.payload.ControlCriticalMode = \"Manually Off\";\n        break;\n    default:\n\t\tmsg.payload.ControlCriticalMode = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 1380,
+        "wires": [
+            [
+                "0e65318dd07c676a"
+            ]
+        ]
+    },
+    {
+        "id": "0e65318dd07c676a",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "016393b10e6fc112",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5033_ControlChargingSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Control Configuration\n// Object      = Charge\n// MsgLength   = 60\n// Description = Control Charging setup configuration\n// Version     = 3\n// Frequency   = 20 seconds\n// Support     = Current\n// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8( 'ControlChargeMode')  /* Choices ControlChargeModes\n\t\t\t\tAuto\t\t  \t = 0,\n\t\t\t\tManually On      = 1,\n\t\t\t\tManually Off     = 2,\n\t\t\t\tManually Limited = 3, */\t\n\t\t.uint8(  'ControlChargeAllowLimPowerStage')  \t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlChargeAllowBypassLimPower') \t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlChargeAllowBypassComplete') \t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlChargeInitalBypassAmp',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('ControlChargeFinalBypassAmp',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8(  'ControlChargeMonitorCellTempLo') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlChargeMonitorCellTempHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlChargeCellTempLo',\t\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(  'ControlChargeCellTempHi',\t\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(  'ControlChargeMonitorAmbientLo') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlChargeMonitorAmbientHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlChargeAmbientTempLo',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(  'ControlChargeAmbientTempHi',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(  'ControlChargeMonitorSupplyHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlChargeSupplyVoltHi',\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('ControlChargeSupplyVoltResume',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8(  'ControlChargeMonitorCellVoltHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlChargeCellVoltHi',\t\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('ControlChargeCellVoltResume',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('ControlChargeCellVoltLimPower',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8(  'ControlChargeMonitorShuntVoltHi') \t// boolean 0 = Off , 1 = On\n\t\t.int16le('ControlChargeShuntVoltHi',\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('ControlChargeShuntVoltResume',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('ControlChargeShuntVoltLimPower',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8(  'ControlChargeMonitorShuntSocHi') \t\t// boolean 0 = Off , 1 = On\n\t\t.uint8(  'ControlChargeShuntSocHi', \t\t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.uint8(  'ControlChargeShuntSocResume', \t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.uint32le('ControlChargeStopInterval',\t\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint32le('ControlChargeStartInterval',\t\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint8(  'ControlChargeSetupVers')  \n\t\t.floatle('ControlChargeBypassSessionLo',\t\t{ formatter: (x) => {return x/1000;}})\t// Ah\n\t\t.uint8(  'ControlChargeAllowBypassSession') \t// boolean 0 = Off , 1 = On\n\t\t\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.ControlChargeMode) {\n    case 0:\n        msg.payload.ControlChargeMode = \"Auto\";\n        break;\n    case 1:\n        msg.payload.ControlChargeMode = \"Manually On\";\n        break;\n    case 2:\n        msg.payload.ControlChargeMode = \"Manually Off\";\n        break;\n    case 3:\n        msg.payload.ControlChargeMode = \"Manually Limited\";\n        break;\n    default:\n\t\tmsg.payload.ControlChargeMode = \"Bad\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1480,
+        "wires": [
+            [
+                "1160ccb1d2f28ffa"
+            ]
+        ]
+    },
+    {
+        "id": "1160ccb1d2f28ffa",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "447fab1d4bc70d5b",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5158_ControlDischargeSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Control Configuration\n// Object      = Discharge\n// MsgLength   = 49\n// Description = Control Discharge setup configuration\n// Version     = 1\n// Frequency   = 20 seconds\n// Support     = Current\n// Valid to    = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8(   'ControlDischargeMode') /* Choices ControlDischgModes\n\t\t\t\tAuto\t\t  \t = 0,\n\t\t\t\tManually On      = 1,\n\t\t\t\tManually Off     = 2,\n\t\t\t\tManually Limited = 3, */\t\n\t\t.uint8(   'ControlDischargeAllowLimPowerStage')\t// boolean 0 = Off , 1 = On\n\t\t.uint8(   'ControlDischargeMonitorCellTempLo') \t// boolean 0 = Off , 1 = On\n\t\t.uint8(   'ControlDischargeMonitorCellTempHi') \t// boolean 0 = Off , 1 = On\n\t\t.uint8(   'ControlDischargeCellTempLo',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(   'ControlDischargeCellTempHi',\t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(   'ControlDischargeMonitorAmbientLo') \t// boolean 0 = Off , 1 = On\n\t\t.uint8(   'ControlDischargeMonitorAmbientHi') \t// boolean 0 = Off , 1 = On\n\t\t.uint8(   'ControlDischargeAmbientTempLo',\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(   'ControlDischargeAmbientTempHi',\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8(   'ControlDischargeMonitorSupplyLo') \t// boolean 0 = Off , 1 = On\n\t\t.int16le( 'ControlDischargeSupplyVoltLo',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le( 'ControlDischargeSupplyVoltResume',\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8(   'ControlDischargeMonitorCellVoltLo') \t// boolean 0 = Off , 1 = On\n\t\t.int16le( 'ControlDischargeCellVoltLo',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le( 'ControlDischargeCellVoltResume',\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le( 'ControlDischargeCellVoltLimPower',\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8(   'ControlDischargeMonitorShuntVoltLo') // boolean 0 = Off , 1 = On\n\t\t.int16le( 'ControlDischargeShuntVoltLo',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le( 'ControlDischargeShuntVoltResume',\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le( 'ControlDischargeShuntVoltLimPower',\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8(   'ControlDischargeMonitorShuntSocLo') \t// boolean 0 = Off , 1 = On\n\t\t.uint8(   'ControlDischargeShuntSocLo', \t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.uint8(   'ControlDischargeShuntSocResume', \t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.uint32le('ControlDischargeStopInterval',\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint32le('ControlDischargeStartInterval',\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint8(   'ControlDischargeSetupVers')  \n\t\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.ControlDischargeMode) {\n    case 0:\n        msg.payload.ControlDischargeMode = \"Auto\";\n        break;\n    case 1:\n        msg.payload.ControlDischargeMode = \"Manually On\";\n        break;\n    case 2:\n        msg.payload.ControlDischargeMode = \"Manually Off\";\n        break;\n    case 3:\n        msg.payload.ControlDischargeMode = \"Manually Limited\";\n        break;\n    default:\n\t\tmsg.payload.ControlDischargeMode = \"Bad\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1580,
+        "wires": [
+            [
+                "137295caf20156e9"
+            ]
+        ]
+    },
+    {
+        "id": "137295caf20156e9",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "f15937d5d6df29f9",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5233_ControlThermalSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Control Configuration\n// Object      = Thermal\n// MsgLength   = 40\n// Description = Control thermal setup configuration\n// Version     = 3\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.uint8('ControlHeatMode')  /* Choices ThermalControlModes\n\t\t\t\tAuto\t\t  \t = 0,\n\t\t\t\tManually On      = 1,\n\t\t\t\tManually Off     = 2, */\t\n\t\t.uint8('ControlHeatMonitorLoCellTemp')  \t// Boolean 0 = Off , 1 = On\n\t\t.uint8('ControlHeatMonitorLoAmbient')  \t\t// Boolean 0 = Off , 1 = On\n\t\t.uint8('ControlHeatLoCellTemp', \t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8('ControlHeatLoAmbient',\t \t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint32le('ControlHeatStopInterval',\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint32le('ControlHeatStartInterval',\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint8('ControlCoolMode')  \t\t\t\t\t/* Choices ThermalControlModes */\n\t\t.uint8('ControlCoolMonitorHiCellTemp')  \t// Boolean 0 = Off , 1 = On\n\t\t.uint8('ControlCoolMonitorHiAmbient')   \t// Boolean 0 = Off , 1 = On\n\t\t.uint8('ControlCoolMonitorInBypass')   \t\t// Boolean 0 = Off , 1 = On\n\t\t.uint8('ControlCoolHiCellTemp', \t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint8('ControlCoolHiAmbient',\t \t\t\t{ formatter: (x) => {return x-40;}}) // temperature ºC\n\t\t.uint32le('ControlCoolStopInterval',\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint32le('ControlCoolStartInterval',\t\t{ formatter: (x) => {return x/1000;}}) // seconds\n\t\t.uint8('ControlThermalSetupVers')  \n\n  \nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.ControlHeatMode) {\n    case 0:\n        msg.payload.ControlHeatMode = \"Auto\";\n        break;\n    case 1:\n        msg.payload.ControlHeatMode = \"Manually On\";\n        break;\n    case 2:\n        msg.payload.ControlHeatMode = \"Manually Off\";\n        break;\n    default:\n\t\tmsg.payload.ControlHeatMode = \"Bad\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1680,
+        "wires": [
+            [
+                "7d1c13090efb43ba"
+            ]
+        ]
+    },
+    {
+        "id": "7d1c13090efb43ba",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "840c026fe42c2b97",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4e33_ControlRemoteSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Control Configuration\n// Object      = Remote\n// MsgLength   = 66\n// Description = Control remote setup configuration\n// Version     = 3\n// Frequency   = 40 seconds\n// Support     = Current\n// Valid from  = SW 2.17.8\n\nvar typea = new Packet()\n\t.skip(8)\n\t.int16le('ControlChargeTargetNormVolt')\n\t.int16le('ControlChargeTargetNormAmp')\n\t.int16le('ControlChargeTargetNormVA')\n\t.int16le('ControlChargeTargetLimpVolt')\n\t.int16le('ControlChargeTargetLimpAmp')\n\t.int16le('ControlChargeTargetLimpVA')\n\t.int16le('ControlChargeScale16volt')\n\t.int16le('ControlChargeScale16amp')\n\t.int16le('ControlChargeScale16va')\n\t.int16le('ControlDischargeTargetNormVolt')\n\t.int16le('ControlDischargeTargetNormAmp')\n\t.int16le('ControlDischargeTargetNormVA')\n\t.int16le('ControlDischargeTargetLimpVolt')\n\t.int16le('ControlDischargeTargetLimpAmp')\n\t.int16le('ControlDischargeTargetLimpVA')\n\t.int16le('ControlDischargeScale16volt')\n\t.int16le('ControlDischargeScale16amp')\n\t.int16le('ControlDischargeScale16va')\n\t.uint8('ControlRemoteSetupVers')\n\t.uint8('ControlRemoteTemplateNo')\n\t.int16le('ControlChargeRamp1Amp')\n\t.int16le('ControlChargeRamp2Amp')\n\t.int16le('ControlChargeRamp3Amp')\n\t.uint8('ControlChargeRamp1SoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t.uint8('ControlChargeRamp2SoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t.uint8('ControlChargeRamp3SoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t.uint8('ControlChargeLimpSoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t.int16le('ControlDischargeRamp1Amp')\n\t.int16le('ControlDischargeRamp2Amp')\n\t.int16le('ControlDischargeRamp3Amp')\n\t.uint8('ControlDischargeRamp1SoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t.uint8('ControlDischargeRamp2SoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t.uint8('ControlDischargeRamp3SoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t.uint8('ControlDischargeLimpSoC', { formatter: (x) => { return x / 2 - 5; } })  // percent\n\t\t\nmsg.payload = typea.parse(buf);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1780,
+        "wires": [
+            [
+                "f7834591f935affc"
+            ]
+        ]
+    },
+    {
+        "id": "f7834591f935affc",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "06bb80f070b66633",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5831_HistoryDalySession",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Session history\n// Object      = Quick\n// MsgLength   = 60\n// Description = Daily session history\n// Version     = 1\n// Frequency   = adhoc\n// Support     = Current\n// Created     = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.int16le('DailySessionHistId')\n\t\t.uint32le('DailySessionHistTime') \t\t// Epoch   *** log key ***\n\t\t.uint8('DailySessionHistCriticalEvents')\n\t\t.skip(1)\n\t\t.uint8('DailySessionHistMinReportTemp',\t\t\t{ formatter: (x) => {return x-40;}})\t// temperature ºC\n\t\t.uint8('DailySessionHistMaxReportTemp',\t\t\t{ formatter: (x) => {return x-40;}})\t// temperature ºC\n\t\t.uint8('DailySessionHistMinShuntSoc', \t\t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.uint8('DailySessionHistMaxShuntSoc', \t\t\t{ formatter: (x) => {return (x-5)/2;}}) // percent\n\t\t.int16le('DailySessionHistMinCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('DailySessionHistMaxCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('DailySessionHistMinSupplyVolt',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('DailySessionHistMaxSupplyVolt',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('DailySessionHistMinShuntVolt',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.int16le('DailySessionHistMaxShuntVolt',\t\t{ formatter: (x) => {return x/100;}})\n\t\t.uint8('DailySessionHistThermalBandA',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistThermalBandB',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistThermalBandC',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistThermalBandD',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistThermalBandE',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistThermalBandF',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistThermalBandG',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistThermalBandH',\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandA',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandB',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandC',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandD',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandE',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandF',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandG',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.uint8('DailySessionHistSocBandH',\t\t\t\t{ formatter: (x) => {return x/10;}}) // hours\n\t\t.int16le('DailySessionHistShuntPeakCharge',\t\t{ formatter: (x) => {return x/100;}})  // amp\n\t\t.int16le('DailySessionHistShuntPeakDischg',\t\t{ formatter: (x) => {return x/100;}})  // amp\n\t\t.int16le('DailySessionHistCumulShuntAhCharge',\t{ formatter: (x) => {return x/1000;}}) // Ah\n\t\t.int16le('DailySessionHistCumulShuntAhDischg',\t{ formatter: (x) => {return x/1000;}}) // Ah\n\t\t\nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.DailySessionHistTime = new Date(msg.payload.DailySessionHistTime*1000);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 1180,
+        "wires": [
+            [
+                "b0706db70e798906"
+            ]
+        ]
+    },
+    {
+        "id": "b0706db70e798906",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "a986acc59cf835fa",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_6831_HistoryQuickSession",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Session history\n// Object      = Quick\n// MsgLength   = 32\n// Description = Quick session history\n// Version     = 1\n// Frequency   = adhoc\n// Support     = Current\n// Created     = SW 1.0.29\n\nvar typea = new Packet()\n\t\t.skip(8)\n\t\t.int16le('QuickSessionHistId')\n\t\t.uint32le('QuickSessionHistTime') \t\t// Epoch  *** log key ***\n\t\t.uint8('QuickSessionHistSystemOpState') /* Choices\n\t\t\t\tSimulator = 0,   \t  // LED = rainbow pulse\n\t\t\t\tIdle = 1,        \t  // LED = green slow pulse\n\t\t\t\tDischarging = 2, \t  // LED = green solid \n\t\t\t\tSoC Empty = 3,   \t  // LED = green double blink\n\t\t\t\tCharging = 4,    \t  // LED = blue slow pulse\n\t\t\t\tFull = 5,        \t  // LED = blue double blink\n\t\t\t\tTimeout = 6,     \t  // LED = red solid\n\t\t\t\tCritical Pending = 7, // LED = red fast pulse\n\t\t\t\tCritical Offline = 8, // LED = red slow pulse\n\t\t\t\tMqtt Offline = 9,     // LED = white blink\n\t\t\t\tAuth Setup = 10,      // LED = white solid\n\t\t\t\tShunt Timeout = 11,   // LED = red solid  \t*/\n\t\t.uint8( 'QuickSessionHistControlLogic')  \n\t\t.int16le('QuickSessionHistMinCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('QuickSessionHistMaxCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.int16le('QuickSessionHistAvgCellVolt',\t\t\t{ formatter: (x) => {return x/1000;}})\n\t\t.uint8('QuickSessionHistAvgCellTemp',\t\t\t{ formatter: (x) => {return x-40;}})\t// temperature ºC\n\t\t.int16le('QuickSessionHistSocHiRes',\t\t\t{ formatter: (x) => {return x/100;}})\t// percent\n\t\t.int16le('QuickSessionHistShuntVolt',\t\t\t{ formatter: (x) => {return x/100;}})\n\t\t.floatle('QuickSessionHistShuntAmp',\t\t\t{ formatter: (x) => {return x/1000;}})  // amp\n\t\t.uint8('QuickSessionHistNumOfCellsInBypass')\n\n\t\nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.QuickSessionHistTime = new Date(msg.payload.QuickSessionHistTime*1000);\n\nswitch(msg.payload.QuickSessionHistSystemOpState) {\n    case 0:\n        msg.payload.QuickSessionHistSystemOpState = \"Simulator\";\n        break;\n    case 1:\n        msg.payload.QuickSessionHistSystemOpState = \"Idle\";\n        break;\n    case 2:\n        msg.payload.QuickSessionHistSystemOpState = \"Discharging\";\n        break;\n    case 3:\n        msg.payload.QuickSessionHistSystemOpState = \"SoC Empty\";\n        break;\n    case 4:\n        msg.payload.QuickSessionHistSystemOpState = \"Charging\";\n        break;\n    case 5:\n        msg.payload.QuickSessionHistSystemOpState = \"Full\";\n        break;\n    case 6:\n        msg.payload.QuickSessionHistSystemOpState = \"Timeout\";\n        break;\n    case 7:\n        msg.payload.QuickSessionHistSystemOpState = \"CriticalPending\";\n        break;\n    case 8:\n        msg.payload.QuickSessionHistSystemOpState = \"CriticalOffline\";\n        break;\n    case 9:\n        msg.payload.QuickSessionHistSystemOpState = \"MqttOffline\";\n        break;\n    case 10:\n        msg.payload.QuickSessionHistSystemOpState = \"AuthSetup\";\n        break;\n    case 11:\n        msg.payload.QuickSessionHistSystemOpState = \"Shunt Timeout\";\n        break;\n    default:\n        msg.payload.QuickSessionHistSystemOpState = \"Bad\";\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 1280,
+        "wires": [
+            [
+                "c82222aa84b813bd",
+                "368236d9a9a35923"
+            ]
+        ]
+    },
+    {
+        "id": "f5d3e8fd4602d84b",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "d": true,
+        "name": "Msg_5931_ControlSchedulerASetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n\t\t.skip(8)\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 1880,
+        "wires": [
+            [
+                "cfa003a4e7a7cd63"
+            ]
+        ]
+    },
+    {
+        "id": "a19e112d463dfe6f",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 430,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "aa8e619933157bc1",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Get the set of saved global variables",
+        "func": "\nvar ONE = global.get('ONE') || 0;\nvar TWO = global.get('TWO') || 0;\nvar THREE = global.get('THREE') || 0;\nvar FOUR = global.get('FOUR') || 0;\nvar FIVE = global.get('FIVE') || 0;\nvar SIX = global.get('SIX') || 0;\nvar SEVEN = global.get('SEVEN') || 0;\nvar EIGHT = global.get('EIGHT') || 0;\nvar NINE = global.get('NINE') || 0;\nvar TEN = global.get('TEN') || 0;\nvar ELEVEN = global.get('ELEVEN') || 0;\nvar TWELVE = global.get('TWELVE') || 0;\nvar THIRTEEN = global.get('THIRTEEN') || 0;\nvar FOURTEEN = global.get('FOURTEEN') || 0;\nvar FIFTEEN = global.get('FIFTEEN') || 0;\nvar SIXTEEN = global.get('SIXTEEN') || 0;\n\n\n\nvar m = {};\nm.labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];\nm.data = [[ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, ELEVEN, TWELVE, THIRTEEN, FOURTEEN, FIFTEEN, SIXTEEN]];\nm.series = ['Cell'];\nreturn {payload:[m],topic:msg.topic};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1710,
+        "y": 80,
+        "wires": [
+            [
+                "46937bce9fc74aaf",
+                "634d9f7391703c57"
+            ]
+        ]
+    },
+    {
+        "id": "46937bce9fc74aaf",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 2210,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6aa8154a8848847b",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Put cell voltage into globals",
+        "func": "var myLongmon;\n\nswitch(msg.payload.ID) {\n    case 1:\n        myLongmon=\"ONE\";\n        break;\n    case 2:\n        myLongmon=\"TWO\";\n        break;\n    case 3:\n        myLongmon=\"THREE\";\n        break;\n    case 4:\n        myLongmon=\"FOUR\";\n        break;\n    case 5:\n        myLongmon=\"FIVE\";\n        break;\n    case 6:\n        myLongmon=\"SIX\";\n        break;\n    case 7:\n        myLongmon=\"SEVEN\";\n        break;\n    case 8:\n        myLongmon=\"EIGHT\";\n        break;\n    case 9:\n        myLongmon=\"NINE\";\n        break;\n    case 10:\n        myLongmon=\"TEN\";\n        break;\n    case 11:\n        myLongmon=\"ELEVEN\";\n        break;\n    case 12:\n        myLongmon=\"TWELVE\";\n        break;\n    case 13:\n        myLongmon=\"THIRTEEN\";\n        break;\n    case 14:\n        myLongmon=\"FOURTEEN\";\n        break;\n    case 15:\n        myLongmon = \"FIFTEEN\";\n        break;\n    case 16:\n        myLongmon = \"SIXTEEN\";\n        break;\n}\n \nglobal.set(myLongmon,msg.payload.MaxCellVolt);    \n     \n//return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1680,
+        "y": 260,
+        "wires": [
+            [
+                "661300b642b61bf3"
+            ]
+        ]
+    },
+    {
+        "id": "b1803b18d8d3a34c",
+        "type": "inject",
+        "z": "2d6c057d03b50939",
+        "name": "Update the chart every 1 second",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1240,
+        "y": 140,
+        "wires": [
+            [
+                "aa8e619933157bc1",
+                "49f5e515d3a77f44",
+                "c99491a682a665ed"
+            ]
+        ]
+    },
+    {
+        "id": "634d9f7391703c57",
+        "type": "ui_chart",
+        "z": "2d6c057d03b50939",
+        "name": "Realtime cell voltages",
+        "group": "605bdeca.e6347",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "label": "Cell voltages",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No Data",
+        "dot": false,
+        "ymin": "3",
+        "ymax": "3.6",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#00aaff",
+            "#b3dfea",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2240,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df5e286b4aa5da11",
+        "type": "ui_text",
+        "z": "2d6c057d03b50939",
+        "group": "605bdeca.e6347",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "Shunt Status: ",
+        "label": "Shunt Status: ",
+        "format": "{{msg.payload.ShuntStatus}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1640,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "213a6a64c166c3fb",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_4733_TelemetryCtrLogicStatus",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Aggregated telemetry\n// Object      = CtrlLogic\n// Description = Combined status - Control logic\n// MsgLength   = 41\n// Version     = 3\n// Frequency   = 2 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n    .skip(8)\n    .bit1('isCriticalBattOkState')      // boolean index 8 - bit0\n    .bit1('isCriticalBattOkCalc')       // boolean index 8 - bit1\n    .bit1('isCriticalTransition')       // boolean index 8 - bit2\n    .bit1('hasCriticalCellOverdue')     // boolean index 8 - bit3\n    .bit1('hasCriticalCellVoltLo')      // boolean index 8 - bit4\n    .bit1('hasCriticalCellVoltHi')      // boolean index 8 - bit5\n    .bit1('hasCriticalCellTempLo')      // boolean index 8 - bit6\n    .bit1('hasCriticalCellTempHi')      // boolean index 8 - bit7\n    .bit1('hasCriticalSupplyVoltLo')    // boolean index 9 - bit0\n    .bit1('hasCriticalSupplyVoltHi')    // boolean index 9 - bit1\n    .bit1('hasCriticalAmbientLo')       // boolean index 9 - bit2\n    .bit1('hasCriticalAmbientHi')       // boolean index 9 - bit3\n    .bit1('hasCriticalShuntVoltLo')     // boolean index 9 - bit4\n    .bit1('hasCriticalShuntVoltHi')     // boolean index 9 - bit5\n    .bit1('hasCriticalShuntVoltLoIdle') // boolean index 9 - bit6\n    .bit1('reserved1')\n    .bit1('hasCriticalShuntPeakCharge') // boolean index 10 - bit0\n    .bit1('hasCriticalShuntPeakDischg') // boolean index 10 - bit1\n    .bit4('reserved2')\n    .bit1('hasCriticalRecovery')        // boolean index 10 - bit6\n    .bit1('hasCriticalPrecharge')       // boolean index 10 - bit7\n    .skip(3)    \n    .bit1('isHeatOnState')              // boolean index 14 - bit0\n    .bit1('isHeatOnCalc')               // boolean index 14 - bit1\n    .bit1('isHeatTransition')           // boolean index 14 - bit2\n    .bit1('hasHeatAmbientLo')           // boolean index 14 - bit3\n    .bit1('hasHeatCellTempLo')          // boolean index 14 - bit4\n    .bit1('hasAmbientTriggeredHeat')    // boolean index 14 - bit5\n    .bit1('hasCellTempTriggeredHeat')   // boolean index 14 - bit6\n    .bit1('reserved3')                  // boolean index 14 - bit7  \n    .bit1('isCoolOnState')              // boolean index 15 - bit0\n    .bit1('isCoolOnCalc')               // boolean index 15 - bit1\n    .bit1('isCoolTransition')           // boolean index 15 - bit2\n    .bit1('hasCoolAmbientHi ')          // boolean index 15 - bit3\n    .bit1('hasCoolCellTempHi ')         // boolean index 15 - bit4\n    .bit1('hasAmbientTriggeredHeat')    // boolean index 15 - bit5\n    .bit1('hasCellTempTriggeredHeat')   // boolean index 15 - bit6\n    .bit1('reserved4')                  // boolean index 15 - bit7\n    .uint8('isChargePowerRateState') /* Choices ChargeRateStates\n            Off             = 0,\n            Limited Power   = 2,\n            Normal Power    = 4, */\n    .uint8('isChargePowerRateCalc')     /* Choices ChargeRateStates */\n    .bit1('isChargeOnState')            // boolean index 18 - bit0\n    .bit1('isChargeLimPower')           // boolean index 18 - bit1\n    .bit1('isChargeTransition')         // boolean index 18 - bit2\n    .bit1('hasChargeCellVoltHi')        // boolean index 18 - bit3\n    .bit1('hasChargeCellVoltPause')     // boolean index 18 - bit4\n    .bit1('hasChargeCellVoltLimPower')  // boolean index 18 - bit5\n    .bit1('hasChargeCellTempLo')        // boolean index 18 - bit6\n    .bit1('hasChargeCellTempHi')        // boolean index 18 - bit7\n    .bit1('hasChargeAmbientTempLo')     // boolean index 19 - bit0\n    .bit1('hasChargeAmbientTempHi')     // boolean index 19 - bit1\n    .bit1('hasChargeSupplyVoltHi')      // boolean index 19 - bit2\n    .bit1('hasChargeSupplyVoltPause')   // boolean index 19 - bit3\n    .bit1('hasChargeShuntVoltHi')       // boolean index 19 - bit4\n    .bit1('hasChargeShuntVoltPause')    // boolean index 19 - bit5\n    .bit1('hasChargeShuntVoltLimPower') // boolean index 19 - bit6\n    .bit1('hasFluidFlowActive')         // boolean index 19 - bit7\n    .bit1('hasChargeShuntSocHi ')       // boolean index 20 - bit0\n    .bit1('hasChargeShuntSocPause ')    // boolean index 20 - bit1\n    .bit1('hasChargeAboveInitalBypass ')// boolean index 20 - bit2\n    .bit1('hasChargeAboveFinalBypass ') // boolean index 20 - bit3\n    .bit1('hasChargeInBypass ')         // boolean index 20 - bit4\n    .bit1('hasChargeBypassComplete ')   // boolean index 20 - bit5\n    .bit1('hasChargeBypassTempRelief ') // boolean index 20 - bit6\n    .bit1('hasChargeBypassSessionLo ')  // boolean index 20 - bit7\n    .uint8('isChargePowerRateAlt')      /* Choices ChargeRateStates */\n    .bit1('RebalanceBypassExtra')       // boolean index 22 - bit0\n    .bit7('reserved5')\n    .skip(1)    \n    .uint8('isDischgPowerRateState ')   /* Choices DischgRateStates\n            Off             = 0,\n            Limited Power   = 2,\n            Normal Power    = 4, */\n    .uint8('isDischgPowerRateCalc')     /* Choices DischgRateStates */\n    .bit1('isDischgOnState')            // boolean index 26 - bit0\n    .bit1('isDischgLimPower')           // boolean index 26 - bit1\n    .bit1('isDischgTransition')         // boolean index 26 - bit2\n    .bit1('hasDischgCellVoltLo')        // boolean index 26 - bit3\n    .bit1('hasDischgCellVoltPause')     // boolean index 26 - bit4\n    .bit1('hasDischgCellVoltLimPower')  // boolean index 26 - bit5\n    .bit1('hasDischgCellTempLo')        // boolean index 26 - bit6\n    .bit1('hasDischgCellTempHi')        // boolean index 26 - bit7\n    .bit1('hasDischgAmbientLo')         // boolean index 27 - bit0\n    .bit1('hasDischgAmbientHi')         // boolean index 27 - bit1\n    .bit1('hasDischgSupplyVoltLo')      // boolean index 27 - bit2\n    .bit1('hasDischgSupplyVoltPause')   // boolean index 27 - bit3\n    .bit1('hasDischgShuntVoltLo')       // boolean index 27 - bit4\n    .bit1('hasDischgShuntVoltPause')    // boolean index 27 - bit5\n    .bit1('hasDischgShuntVoltLimPower') // boolean index 27 - bit6\n    .bit1('reserved6')\n    .bit1('hasDischgShuntSocLo')        // boolean index 28 - bit0\n    .bit1('hasDischgShuntSocPause')     // boolean index 28 - bit0\n    .bit6('reserved7')\n    .uint8('isDischgPowerRateAlt')      /* Choices DischgRateStates */\n    .bit1('reserved8')                  // boolean index 30 - bit0\n    .bit1('reserved9')                  // boolean index 30 - bit1\n    .bit1('hasSocLoTriggered2')         // boolean index 30 - bit2\n    .bit1('isSocOnState2')              // boolean index 30 - bit3\n    .bit1('hasSocHiTriggered2')         // boolean index 30 - bit4\n    .bit1('hasSocLoTriggered1')         // boolean index 30 - bit5\n    .bit1('isSocOnState1')              // boolean index 30 - bit6\n    .bit1('hasSocHiTriggered1')         // boolean index 30 - bit7\n    .bit1('reserved10')                 // boolean index 31 - bit0\n    .bit1('reserved11')                 // boolean index 31 - bit1\n    .bit1('hasSocLoTriggered4')         // boolean index 31 - bit2\n    .bit1('isSocOnState4')              // boolean index 31 - bit3\n    .bit1('hasSocHiTriggered4')         // boolean index 31 - bit4\n    .bit1('hasSocLoTriggered3')         // boolean index 31 - bit5\n    .bit1('isSocOnState3')              // boolean index 31 - bit6\n    .bit1('hasSocHiTriggered3')         // boolean index 31 - bit7\n    .bit1('ExpansionOutputRelay4')      // boolean index 32 - bit0\n    .bit1('ExpansionOutputRelay3')      // boolean index 32 - bit1\n    .bit1('ExpansionOutputRelay2')      // boolean index 32 - bit2\n    .bit1('ExpansionOutputRelay1')      // boolean index 32 - bit3\n    .bit1('ExpansionOutputSSR8')        // boolean index 32 - bit4\n    .bit1('ExpansionOutputSSR7')        // boolean index 32 - bit5\n    .bit1('ExpansionOutputSSR6')        // boolean index 32 - bit6\n    .bit1('ExpansionOutputSSR5')        // boolean index 32 - bit7\n    .bit1('reserved12')                 // boolean index 33 - bit0\n    .bit1('RelayA')                     // boolean index 33 - bit1\n    .bit1('ExpansionInput3')            // boolean index 33 - bit2\n    .bit1('ExpansionInput4')            // boolean index 33 - bit3\n    .bit1('ExpansionInput5')            // boolean index 33 - bit4\n    .bit1('ExpansionInput6')            // boolean index 33 - bit5\n    .bit1('ExpansionOutputPwm1')        // boolean index 33 - bit6\n    .bit1('ExpansionOutputPwm2')        // boolean index 33 - bit7\n    .skip(2)\n    .int16le('ExpansionInputAIN1')      // index 36\n    .int16le('ExpansionInputAIN2')      // index 38\n    .uint8('DiffLogicTicks')            // index 40\n\nmsg.payload = typea.parse(buf);\n\nswitch(msg.payload.isSocOnState1) {\n    case 0:\n        msg.payload.isSocOnState1 = \"Off\";\n        break;\n    case 1:\n        msg.payload.isSocOnState1 = \"On\";\n        break;\n    default:\n        msg.payload.isSocOnState1 = \"Bad\";\n}\n\nswitch(msg.payload.isSocOnState2) {\n    case 0:\n        msg.payload.isSocOnState2 = \"Off\";\n        break;\n    case 1:\n        msg.payload.isSocOnState2 = \"On\";\n        break;\n    default:\n        msg.payload.isSocOnState2 = \"Bad\";\n}\n\nswitch(msg.payload.isSocOnState3) {\n    case 0:\n        msg.payload.isSocOnState3 = \"Off\";\n        break;\n    case 1:\n        msg.payload.isSocOnState3 = \"On\";\n        break;\n    default:\n        msg.payload.isSocOnState3 = \"Bad\";\n}\n\nswitch(msg.payload.isSocOnState4) {\n    case 0:\n        msg.payload.isSocOnState4 = \"Off\";\n        break;\n    case 1:\n        msg.payload.isSocOnState4 = \"On\";\n        break;\n    default:\n        msg.payload.isSocOnState4 = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 3080,
+        "wires": [
+            [
+                "6532f096f7483168",
+                "b8e224c1c18f2fac"
+            ]
+        ]
+    },
+    {
+        "id": "6532f096f7483168",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 3140,
+        "wires": []
+    },
+    {
+        "id": "3d5a6cf499168cf2",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "c9e1245aa260af6c",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_6133_TelemetryCommunicationStatus",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Aggregated telemetry\n// Object      = Communication\n// MsgLength   = 94\n// Description = Combined status Communication\n// Version     = 3\n// Frequency   = 300 milliseconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n    .skip(8)\n    .uint32le('SystemTime')  // index 8 - Epoch\n    .uint8('SystemOpStatus') /* Choices\n            Simulator = 0,        // LED = rainbow pulse\n            Idle = 1,             // LED = green slow pulse\n            Discharging = 2,      // LED = green solid \n            SoC Empty = 3,        // LED = green double blink\n            Charging = 4,         // LED = blue slow pulse\n            Full = 5,             // LED = blue double blink\n            Timeout = 6,          // LED = red solid\n            Critical Pending = 7, // LED = red fast pulse\n            Critical Offline = 8, // LED = red slow pulse\n            Mqtt Offline = 9,     // LED = white blink\n            Auth Setup = 10,      // LED = white solid\n            Shunt Timeout = 11,   // LED = red solid    */\n    .uint8('SystemAuthMode') /* Choices\n            Default = 0,\n            Technician = 1,\n            Factory = 2, */\n    .int16le('SystemAuthToken')       // index 14\n    .uint8('SystemAuthRejectTicks')   // index 16\n    .uint8('WifiState') /* Choices WifiOpStates\n            Broadcast Start = 0,\n            Broadcast Prep = 1,\n            Broadcast TxSetup = 2,\n            Broadcast Running = 3,\n            UsbCmd Start = 4,\n            UsbCmd Running = 5,\n            UsbCmd PassThru = 6,\n            UsbProg Start = 7,\n            UsbProg Running = 8,\n            UsbProg PassThru = 9,\n            Offline Start = 10,\n            Offline Running = 11,\n            Offline Stop = 12,\n            Limited Start = 13,\n            Limited Prep = 14,\n            Limited Running = 15,\n            JoinAp Start = 16,\n            JoinAp Running = 17,    */      \n    .uint8('WifiRxCmdTicks')     // index 18\n    .uint8('WifiRxUnknownTicks') // index 19\n    .uint8('WifiRxErrorTicks')   // index 20\n    .uint8('WifiTxCmdTicks')     // index 21\n    .uint8('WifiRssi')           // index 22\n    .uint8('CanbusOpStatus') /* Choices */      \n    .uint8('CanbusRxStatusTicks')  // index 24\n    .uint8('CanbusRxUnknownTicks') // index 25\n    .uint8('CanbusRxErrorTicks')   // index 26\n    .uint8('CanbusRxCmdTicks')     // index 27\n    .uint8('CanbusTxCmdTicks')     // index 28\n    .uint8('ShuntPollerMode') /* Choices ShuntPollerModes\n            Idle Start = 0,\n            Idle = 1,\n            Sync Start = 2,\n            Sync Running = 3,\n            Normal = 4,\n            ShuntMon2 SetupStart = 5,\n            ShuntMon2 SetupRunning = 6,\n            ShuntMon2 Normal = 7, */\n    .uint8('ShuntStatus') /* Choices  ShuntStatuses\n            Timeout = 0,\n            Discharging = 1,\n            Idle = 2,\n            Charging = 4 */\n    .uint8('ShuntStatusVolt')     // index 31       \n    .uint8('ShuntRxCmdTicks')     // index 32\n    .uint8('ShuntRxUnknownTicks') // index 33\n    .uint8('ShuntRxErrorTicks')   // index 34\n    .uint8('ShuntTxCmdTicks')     // index 35\n    .uint8('ShuntRxIdle')         // index 36\n    .uint8('UsbOpStatus') /* Choices */     \n    .uint8('UsbRxCmdTicks')       // index 38\n    .uint8('UsbRxUnknownTicks')   // index 39\n    .uint8('UsbRxErrorTicks')     // index 40\n    .uint8('UsbTxCmdTicks')       // index 41\n    .uint8('MqttOpStatus') /* Choices */        \n    .uint16le('MqttRxCmdTicks')   // index 43\n    .uint8('MqttRxUnknownTicks')  // index 45\n    .uint8('MqttRxErrorTicks')    // index 46\n    .uint16le('MqttTxCmdTicks')   // index 47\n    .uint8('rs485OpStatus')  /* Choices */      \n    .uint8('rs485RxCmdTicks')     // index 50\n    .uint8('rs485RxUnknownTicks') // index 51\n    .uint8('rs485RxErrorTicks')   // index 52\n    .uint8('rs485TxCmdTicks')     // index 53   \n    .uint8('CmuPollerMode') /* Choices\n            Idle = 0,\n            Normal = 1,\n            Collection Start = 2,\n            Collection Running = 3,\n            Sync Start = 4,\n            Sync Running = 5,\n            NetworkTest Start = 6,\n            NetworkTest Running = 9,\n            BypassTest Start = 7,\n            BypassTest Running = 8,\n            RebootAll Start = 10,\n            Rebooting AllDevices = 11,\n            Simulator Start = 12,\n            Simulator Running = 13, */\n    .uint8('CmuRxCmdTicks')      // index 55\n    .uint8('CmuRxUnknownTicks')  // index 56\n    .uint8('CmuRxErrorTicks')    // index 57\n    .uint8('CmuTxCmdTicks')      // index 58\n    .uint8('CmuOpStatus') /* Choices */\n    .uint8('CmuTxAckCount')             // index 60 - Cellmon TX Acknowledgement Count\n    .uint8('CmuTxOpStatusNodeId')       // index 61 - Cellmon TX Operating Status Node ID\n    .uint8('CmuTxOpStatusUSN')          // index 62 - Cellmon TX Operating Status Universal Serial Number\n    .uint8('CmuTxOpParamNodeId')        // index 63 - Cellmon TX Parameter Node ID\n    .int16le('GroupMinCellVolt', { formatter: (x) => {return x/1000;}}) // index 64\n    .int16le('GroupMaxCellVolt', { formatter: (x) => {return x/1000;}}) // index 66\n    .uint8('GroupMinCellTemp',   { formatter: (x) => {return x-40;}})   // index 68 - temperature ºC\n    .uint8('GroupMaxCellTemp',   { formatter: (x) => {return x-40;}})   // index 69 - temperature ºC\n    .uint8('CmuRxOpStatusNodeId')       // index 70\n    .uint8('CmuRxOpStatusGroupAck')     // index 71\n    .uint8('CmuRxOpStatusUSN')          // index 72\n    .uint8('CmuRxOpParamNodeId')        // index 73\n    .int16le('RepeatCellVoltCounter')   // index 74\n    .uint8('HwSystemSetupVers')         // index 76\n    .uint8('HwCellGroupSetupVers')      // index 77\n    .uint8('HwShuntSetupVers')          // index 78\n    .uint8('HwExpansionSetupVers')      // index 79\n    .uint8('HwIntegrationSetupVers')    // index 80\n    .uint8('ControlCriticalSetupVers')  // index 81\n    .uint8('ControlChargeSetupVers')    // index 82\n    .uint8('ControlDischargeSetupVers') // index 83\n    .uint8('ControlThermalSetupVers')   // index 84\n    .uint8('ControlRemoteSetupVers')    // index 85\n    .uint8('ControlSchedulerSetupVers') // index 86\n    .uint8('ControlSocLimitSetupVers')  // index 87\n    .uint8('LifetimeSetupVers')         // index 88\n    .uint8('GlobalSetupVers')           // index 89\n    .uint8('DiffLogicTicks')            // index 90\n    .uint8('DiffBypassTicks')           // index 91\n    .uint8('DiffTempTicks')             // index 92\n    .uint8('DiffVoltTicks')             // index 93\n\nmsg.payload = typea.parse(buf);\n\n// convert date(s)\nmsg.payload.SystemTime = new Date(msg.payload.SystemTime*1000);\n\nswitch(msg.payload.SystemOpStatus) {\n    case 0:\n        msg.payload.SystemOpStatus = \"Simulator\";\n        break;\n    case 1:\n        msg.payload.SystemOpStatus = \"Idle\";\n        break;\n    case 2:\n        msg.payload.SystemOpStatus = \"Discharging\";\n        break;\n    case 3:\n        msg.payload.SystemOpStatus = \"SoC Empty\";\n        break;\n    case 4:\n        msg.payload.SystemOpStatus = \"Charging\";\n        break;\n    case 5:\n        msg.payload.SystemOpStatus = \"Full\";\n        break;\n    case 6:\n        msg.payload.SystemOpStatus = \"Timeout\";\n        break;\n    case 7:\n        msg.payload.SystemOpStatus = \"Critical Pending\";\n        break;\n    case 8:\n        msg.payload.SystemOpStatus = \"Critical Offline\";\n        break;\n    case 9:\n        msg.payload.SystemOpStatus = \"Mqtt Offline\";\n        break;\n    case 10:\n        msg.payload.SystemOpStatus = \"Auth Setup\";\n        break;\n    case 11:\n        msg.payload.SystemOpStatus = \"Shunt Timeout\";\n        break;\n    default:\n        msg.payload.SystemOpStatus = \"Bad\";\n}\n\nswitch(msg.payload.SystemAuthMode) {\n    case 0:\n        msg.payload.SystemAuthMode = \"Default\";\n        break;\n    case 1:\n        msg.payload.SystemAuthMode = \"Technician\";\n        break;\n    case 2:\n        msg.payload.SystemAuthMode = \"Factory\";\n        break;\n    default:\n        msg.payload.SystemAuthMode = \"Bad\";\n}\n\nswitch(msg.payload.WifiState) {\n    case 0:\n        msg.payload.WifiState = \"Broadcast Start\";\n        break;\n    case 1:\n        msg.payload.WifiState = \"Broadcast Prep\";\n        break;\n    case 2:\n        msg.payload.WifiState = \"Broadcast TxSetup\";\n        break;\n    case 3:\n        msg.payload.WifiState = \"Broadcast Running\";\n        break;\n    case 4:\n        msg.payload.WifiState = \"UsbCmd Start\";\n        break;\n    case 5:\n        msg.payload.WifiState = \"UsbCmd Running\";\n        break;\n    case 6:\n        msg.payload.WifiState = \"UsbCmd PassThru\";\n        break;\n    case 7:\n        msg.payload.WifiState = \"UsbProg Start\";\n        break;\n    case 8:\n        msg.payload.WifiState = \"UsbProg Running\";\n        break;\n    case 9:\n        msg.payload.WifiState = \"UsbProg PassThru\";\n        break;\n    case 10:\n        msg.payload.WifiState = \"Offline Start\";\n        break;\n    case 11:\n        msg.payload.WifiState = \"Offline Running\";\n        break;\n    case 12:\n        msg.payload.WifiState = \"Offline Stop\";\n        break;\n    case 13:\n        msg.payload.WifiState = \"Limited Start\";\n        break;\n    case 14:\n        msg.payload.WifiState = \"Limited Prep\";\n        break;\n    case 15:\n        msg.payload.WifiState = \"Limited Running\";\n        break;\n    case 16:\n        msg.payload.WifiState = \"JoinAp Start\";\n        break;\n    case 17:\n        msg.payload.WifiState = \"JoinAp Running\";\n        break;\n    default:\n        msg.payload.WifiState = \"Bad\";\n}\n\nswitch(msg.payload.ShuntPollerMode) {\n    case 0:\n        msg.payload.ShuntPollerMode = \"Idle Start\";\n        break;\n    case 1:\n        msg.payload.ShuntPollerMode = \"Idle\";\n        break;\n    case 2:\n        msg.payload.ShuntPollerMode = \"Sync Start\";\n        break;\n    case 3:\n        msg.payload.ShuntPollerMode = \"Sync Running\";\n        break;\n    case 4:\n        msg.payload.ShuntPollerMode = \"Normal\";\n        break;\n    case 5:\n        msg.payload.ShuntPollerMode = \"ShuntMon2 SetupStart\";\n        break;\n    case 6:\n        msg.payload.ShuntPollerMode = \"ShuntMon2 SetupRunning\";\n        break;\n    case 7:\n        msg.payload.ShuntPollerMode = \"ShuntMon2 Normal\";\n        break;\n    default:\n        msg.payload.ShuntPollerMode = \"Bad\";\n}\n\nswitch(msg.payload.ShuntStatus) {\n    case 0:\n        msg.payload.ShuntStatus = \"Timeout\";\n        break;\n    case 1:\n        msg.payload.ShuntStatus = \"Discharging\";\n        break;\n    case 2:\n        msg.payload.ShuntStatus = \"Idle\";\n        break;\n    case 4:\n        msg.payload.ShuntStatus = \"Charging\";\n        break;\n    default:\n        msg.payload.ShuntStatus = \"Bad\";\n}\n\nswitch(msg.payload.CmuPollerMode) {\n    case 0:\n        msg.payload.CmuPollerMode = \"Idle\";\n        break;\n    case 1:\n        msg.payload.CmuPollerMode = \"Normal\";\n        break;\n    case 2:\n        msg.payload.CmuPollerMode = \"Collection Start\";\n        break;\n    case 3:\n        msg.payload.CmuPollerMode = \"Collection Running\";\n        break;\n    case 4:\n        msg.payload.CmuPollerMode = \"Sync Start\";\n        break;\n    case 5:\n        msg.payload.CmuPollerMode = \"Sync Running\";\n        break;\n    case 6:\n        msg.payload.CmuPollerMode = \"NetworkTest Start\";\n        break;\n    case 7:\n        msg.payload.CmuPollerMode = \"NetworkTest Running\";\n        break;\n    case 8:\n        msg.payload.CmuPollerMode = \"BypassTest Start\";\n        break;\n    case 9:\n        msg.payload.CmuPollerMode = \"BypassTest Running\";\n        break;\n    case 10:\n        msg.payload.CmuPollerMode = \"RebootAll Start\";\n        break;\n    case 11:\n        msg.payload.CmuPollerMode = \"Rebooting AllDevices\";\n        break;\n    case 12:\n        msg.payload.CmuPollerMode = \"Simulator Start\";\n        break;\n    case 13:\n        msg.payload.CmuPollerMode = \"Simulator Running\";\n        break;\n    default:\n        msg.payload.CmuPollerMode = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 2980,
+        "wires": [
+            [
+                "4ae4e3eeb314c0d7"
+            ]
+        ]
+    },
+    {
+        "id": "4ae4e3eeb314c0d7",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 3040,
+        "wires": []
+    },
+    {
+        "id": "97f21722f6cea37e",
+        "type": "comment",
+        "z": "2d6c057d03b50939",
+        "name": "Based on Watchmon SW 1.0.30 UDP Outbound protocol",
+        "info": "All credit for the parsers to Daniel Römer\nBased on his grafpi project:\nhttp://diytechandrepairs.nu/raspberry-solar/\n\nBatrium WatchMon 4\n\nThe machine running node red must be able \nto acces port 18542 UDP IPv4\n\n",
+        "x": 1239,
+        "y": 71,
+        "wires": []
+    },
+    {
+        "id": "790aa886eb91f88c",
+        "type": "ui_text",
+        "z": "2d6c057d03b50939",
+        "group": "605bdeca.e6347",
+        "order": 0,
+        "width": "3",
+        "height": "2",
+        "name": "MinCellVolt",
+        "label": "Min Cell Voltage",
+        "format": "{{msg.payload.MinCellVolt}}v",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1630,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "bbf9c2eed320416b",
+        "type": "ui_text",
+        "z": "2d6c057d03b50939",
+        "group": "605bdeca.e6347",
+        "order": 0,
+        "width": "3",
+        "height": "2",
+        "name": "MaxCellVolt",
+        "label": "Max Cell Voltage",
+        "format": "{{msg.payload.MaxCellVolt}}v",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1630,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "49f5e515d3a77f44",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Cells Global variables for influx",
+        "func": "var ONE = global.get('ONE') || 0;\nvar TWO = global.get('TWO') || 0;\nvar THREE = global.get('THREE') || 0;\nvar FOUR = global.get('FOUR') || 0;\nvar FIVE = global.get('FIVE') || 0;\nvar SIX = global.get('SIX') || 0;\nvar SEVEN = global.get('SEVEN') || 0;\nvar EIGHT = global.get('EIGHT') || 0;\nvar NINE = global.get('NINE') || 0;\nvar TEN = global.get('TEN') || 0;\nvar ELEVEN = global.get('ELEVEN') || 0;\nvar TWELVE = global.get('TWELVE') || 0;\nvar THIRTEEN = global.get('THIRTEEN') || 0;\nvar FOURTEEN = global.get('FOURTEEN') || 0;\nvar FIFTEEN = global.get('FIFTEEN') || 0;\nvar SIXTEEN = global.get('SIXTEEN') || 0;\nmsg.payload =\n{\n    Cell1: ONE,\n    Cell2: TWO,\n    Cell3: THREE,\n    Cell4: FOUR,\n    Cell5: FIVE,\n    Cell6: SIX,\n    Cell7: SEVEN,\n    Cell8: EIGHT,\n    Cell9: NINE,\n    Cell10: TEN,\n    Cell11: ELEVEN,\n    Cell12: TWELVE,\n    Cell13: THIRTEEN,\n    Cell14: FOURTEEN,\n    Cell15: FIFTEEN,\n    Cell16: SIXTEEN,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1690,
+        "y": 160,
+        "wires": [
+            [
+                "088059c81a797135",
+                "19d8f71f7b053e27"
+            ]
+        ]
+    },
+    {
+        "id": "088059c81a797135",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 2210,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "19d8f71f7b053e27",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "Cell_Voltage",
+        "measurement": "Cell_Voltage",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 2210,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "43a149d074534680",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "DailyCumulShuntAh_C_D Influx",
+        "func": "var CSAD  = 0;\nvar CSAC  = 0;\nCSAD = Number(msg.payload.DailySessionCumulShuntAhDischg);\nCSAC = Number(msg.payload.DailySessionCumulShuntAhCharge);\nmsg.payload =\n{\n    CumulShuntAhDischg: CSAD,\n    CumulShuntAhCharge: CSAC,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1690,
+        "y": 1020,
+        "wires": [
+            [
+                "f3afe220351288d9",
+                "d77d4281956ee8b3"
+            ]
+        ]
+    },
+    {
+        "id": "f3afe220351288d9",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "CumulShuntAh_C_D",
+        "measurement": "CumulShuntAh_C_D",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 2240,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "d77d4281956ee8b3",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2210,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "1da25e88aaa16658",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Cell_Min_Max_Avg Influx",
+        "func": "var MiCV  = 0;\nvar MaCV  = 0;\nvar AvCV  = 0;\nMiCV = Number(msg.payload.MinCellVolt);\nMaCV = Number(msg.payload.MaxCellVolt);\nAvCV = Number(msg.payload.AvgCellVolt);\nmsg.payload =\n{\n    MiCV: MiCV,\n    MaCV: MaCV,\n    AvCV: AvCV,\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1670,
+        "y": 400,
+        "wires": [
+            [
+                "d71e6659d5ae4d3b",
+                "7f653634429870fc"
+            ]
+        ]
+    },
+    {
+        "id": "d71e6659d5ae4d3b",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2210,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "0219af19415c509c",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Shunt_C_V_W Influx",
+        "func": "var ShuntV  = 0;\nvar ShuntC  = 0;\nvar myCurrent = 0;\nvar myVoltage = 0;\nvar Watts = 0;\nShuntV = Number(msg.payload.ShuntVoltage);\nShuntC = Number(msg.payload.ShuntCurrent);\nmyCurrent = Number(msg.payload.ShuntCurrent);\nmyVoltage = Number(msg.payload.ShuntVoltage);\nWatts=myVoltage*myCurrent;\nmsg.payload =\n{\n    ShuntV: ShuntV,\n    ShuntC: ShuntC,\n    Watts: Watts,\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 360,
+        "wires": [
+            [
+                "010a98e5f802ffc8",
+                "57ec3e985cb139fd"
+            ]
+        ]
+    },
+    {
+        "id": "010a98e5f802ffc8",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "Shunt_C_V_W",
+        "measurement": "Shunt_C_V_W",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "",
+        "retentionPolicyV18Flux": "",
+        "org": "",
+        "bucket": "",
+        "x": 2220,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "57ec3e985cb139fd",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2210,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "368236d9a9a35923",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Shunt_State_SOC_Temp Influx",
+        "func": "var SOC  = 0;\nvar SysOpState;\nvar BattTemp  = 0;\nSOC = Number(msg.payload.QuickSessionHistSocHiRes);\nSysOpState = (msg.payload.QuickSessionHistSystemOpState);\nBattTemp = Number(msg.payload.QuickSessionHistAvgCellTemp);\n\nmsg.payload =\n{\n       SysOpState: SysOpState,\n       BattTemp: BattTemp,\n       SOC: SOC,\n}\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1690,
+        "y": 1280,
+        "wires": [
+            [
+                "59522acd18e924a9",
+                "e04db594dfcadb31"
+            ]
+        ]
+    },
+    {
+        "id": "59522acd18e924a9",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2210,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "e04db594dfcadb31",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "Shunt_State_SOC_Temp",
+        "measurement": "Shunt_State_SOC_Temp",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "",
+        "retentionPolicyV18Flux": "",
+        "org": "",
+        "bucket": "",
+        "x": 2250,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "7f653634429870fc",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "Cell_Min_Max_Avg",
+        "measurement": "Cell_Min_Max_Avg",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "",
+        "retentionPolicyV18Flux": "",
+        "org": "",
+        "bucket": "",
+        "x": 2230,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "df83f55acd7c0129",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Shunt_Status",
+        "func": "var ShuntStatus;\nvar HeatOnStat;\nvar CoolOnStat;\nShuntStatus = (msg.payload.ShuntStatus);\nHeatOnStat = (msg.payload.HeatOnState);\nCoolOnStat = (msg.payload.CoolOnState);\nmsg.payload =\n{\n  ShuntStatus: ShuntStatus,\n  HeatOnStat: HeatOnStat,\n  CoolOnStat: CoolOnStat,\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 640,
+        "wires": [
+            [
+                "504b85f9e6950cd1",
+                "2c57f159c5b5398d"
+            ]
+        ]
+    },
+    {
+        "id": "504b85f9e6950cd1",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2210,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "2c57f159c5b5398d",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "Shunt_Status",
+        "measurement": "Shunt_Status",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 2220,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "ab7d9fe5ffe8046a",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "DailySessionShuntPeak_C_D Influx",
+        "func": "var DSSPD  = 0;\nvar DSSPC  = 0;\nDSSPC = Number(msg.payload.DailySessionShuntPeakCharge);\nDSSPD = Number(msg.payload.DailySessionShuntPeakDischg);\nmsg.payload =\n{\n    ShuntPeakCharge: DSSPC,\n    ShuntPeakDischg: DSSPD,\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1700,
+        "y": 1060,
+        "wires": [
+            [
+                "88a2dd6f76afc3a0",
+                "99e0cfc020b74176"
+            ]
+        ]
+    },
+    {
+        "id": "88a2dd6f76afc3a0",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "ShuntPeak_C_D",
+        "measurement": "ShuntPeak_C_D",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 2230,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "99e0cfc020b74176",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2210,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "661300b642b61bf3",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2210,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7bc8d99d0b122969",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "ShuntVoltage",
+        "func": "var myNumber = 0;\nmyNumber = Number(msg.payload.ShuntVoltage);\nreturn { payload : myNumber.toFixed(2) };",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1630,
+        "y": 560,
+        "wires": [
+            [
+                "6d389d7a31f94f69",
+                "115449214468c1fb",
+                "42b7dee4f72e0310"
+            ]
+        ]
+    },
+    {
+        "id": "6d389d7a31f94f69",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2210,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "d3cac60b9a86f1b9",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "ShuntCurrent",
+        "func": "var myNumber = 0;\nmyNumber = Number(msg.payload.ShuntCurrent);\nreturn { payload : myNumber.toFixed(2) };",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1630,
+        "y": 600,
+        "wires": [
+            [
+                "fd63f7db8515a1b0",
+                "344263f80d3e2f90",
+                "d10d162fbe3d277d"
+            ]
+        ]
+    },
+    {
+        "id": "d10d162fbe3d277d",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2210,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "0f4d122e851116d7",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2210,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "70bfd9fe7dcb77be",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "ShuntWatts",
+        "func": "var myCurrent = 0;\nvar myVoltage = 0;\nvar myWatts = 0;\n\nmyCurrent = Number(msg.payload.ShuntCurrent);\nmyVoltage = Number(msg.payload.ShuntVoltage);\n\nmyWatts=myVoltage*myCurrent;\n\nreturn { payload : myWatts.toFixed(2) };",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1630,
+        "y": 440,
+        "wires": [
+            [
+                "0f4d122e851116d7",
+                "da0577da7954909b"
+            ]
+        ]
+    },
+    {
+        "id": "fd63f7db8515a1b0",
+        "type": "ui_text",
+        "z": "2d6c057d03b50939",
+        "group": "605bdeca.e6347",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "name": "Shunt Amps: ",
+        "label": "Shunt Amps: ",
+        "format": "{{msg.payload}}A",
+        "layout": "col-center",
+        "x": 2210,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "115449214468c1fb",
+        "type": "ui_text",
+        "z": "2d6c057d03b50939",
+        "group": "605bdeca.e6347",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "Shunt Volts: ",
+        "label": "Shunt Volts: ",
+        "format": "{{msg.payload}}v",
+        "layout": "col-center",
+        "x": 2210,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "da0577da7954909b",
+        "type": "ui_text",
+        "z": "2d6c057d03b50939",
+        "group": "605bdeca.e6347",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "name": "Shunt Watts: ",
+        "label": "Shunt Watts: ",
+        "format": "{{msg.payload}}W",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 2210,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "42b7dee4f72e0310",
+        "type": "ui_gauge",
+        "z": "2d6c057d03b50939",
+        "name": "Shunt V",
+        "group": "b37bd0d4.0bb66",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Shunt V",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "40",
+        "max": "60",
+        "colors": [
+            "#eb3d1e",
+            "#e6e600",
+            "#52cb3a"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2200,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "344263f80d3e2f90",
+        "type": "ui_gauge",
+        "z": "2d6c057d03b50939",
+        "name": "Shunt A",
+        "group": "e2c441d6.9e1ae",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Shunt A",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-200",
+        "max": "200",
+        "colors": [
+            "#b31200",
+            "#e6e600",
+            "#54c00c"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 2200,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "c99491a682a665ed",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "8 Cell ",
+        "func": "var ONE = Number(global.get('ONE')) || 0;\nvar TWO = Number(global.get('TWO')) || 0;\nvar THREE = Number(global.get('THREE')) || 0;\nvar FOUR = Number(global.get('FOUR')) || 0;\nvar FIVE = Number(global.get('FIVE')) || 0;\nvar SIX = Number(global.get('SIX')) || 0;\nvar SEVEN = Number(global.get('SEVEN')) || 0;\nvar EIGHT = Number(global.get('EIGHT')) || 0;\n\nvar m = {};\nm.series = [\"B1\", \"B2\"];\nm.data = [ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT];\nm.labels = [\"\"];\nreturn {payload:[m],topic:msg.topic};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1610,
+        "y": 120,
+        "wires": [
+            [
+                "54308f6191ae941d"
+            ]
+        ]
+    },
+    {
+        "id": "54308f6191ae941d",
+        "type": "ui_chart",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "group": "b0f57fc2.e496c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "3",
+        "ymax": "3.6",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2190,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de8dac370c68c831",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 2240,
+        "wires": []
+    },
+    {
+        "id": "0f8fc9c532850570",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "d": true,
+        "name": "Msg_5932_ControlSchedulerBSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n\t\t.skip(8)\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 1980,
+        "wires": [
+            [
+                "337ece8d276b8d1f"
+            ]
+        ]
+    },
+    {
+        "id": "f3182440d24d095f",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "d": true,
+        "name": "Msg_5a31_ControlStripCycleSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n\t\t.skip(8)\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 2080,
+        "wires": [
+            [
+                "3d5a6cf499168cf2"
+            ]
+        ]
+    },
+    {
+        "id": "8d2030f6997805da",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "d": true,
+        "name": "Msg_5b31_ControlSocLimitSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n\t\t.skip(8)\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 2180,
+        "wires": [
+            [
+                "de8dac370c68c831"
+            ]
+        ]
+    },
+    {
+        "id": "b36937ca32c957e8",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 3440,
+        "wires": []
+    },
+    {
+        "id": "68c57f5dd5fa876b",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "d": true,
+        "name": "Msg_3033_DiscoveryDevice(v3)",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n\t\t.skip(8)\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 3380,
+        "wires": [
+            [
+                "b36937ca32c957e8"
+            ]
+        ]
+    },
+    {
+        "id": "7e65a4599ca7ef01",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_5634_MetricsLifetimeB",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Telemetry Metrics\n// Description = Telemetry Lifetime metrics - B\n// MsgLength   = 104\n// Version     = 4\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t.skip(8)\n\t.uint8('SystemBypassTestOutcome')  /* Choices BypassTestOutcomes\n        NotTested = 0,\n        Preparing = 1,\n        Testing = 2,\n        PassOk = 3,\n        Failed = 4, */\n\t.uint8('LifetimeSetupVers')          // index 9 \n\t.uint32le('RecentTimeBypassInitial') // index 12 - Epoch\n\t.uint32le('RecentTimeBypassComplete') // index 16 - Epoch\n\t.uint32le('RecentTimeBypassTest')    // index 20 - Epoch\n\t.uint32le('RecentTimeWizardSetup')   // index 24 - Epoch\n\t.uint32le('RecentTimeBypassExtra')   // index 28 - Epoch\n\t.uint32le('LifeCountSocLimit1')      // index 32\n\t.uint32le('RecentTimeSocLimit1On')   // index 36 - Epoch\n\t.uint32le('RecentTimeSocLimit1Off')  // index 40 - Epoch\n\t.uint32le('LifeCountSocLimit2')      // index 44\n\t.uint32le('RecentTimeSocLimit2On')   // index 48 - Epoch\n\t.uint32le('RecentTimeSocLimit2Off')  // index 52 - Epoch\n\t.uint32le('LifeCountSocLimit3')      // index 56\n\t.uint32le('RecentTimeSocLimit3On')   // index 60 - Epoch\n\t.uint32le('RecentTimeSocLimit3Off')  // index 64 - Epoch\n\t.uint32le('LifeCountSocLimit4')      // index 68\n\t.uint32le('RecentTimeSocLimit4On')   // index 72 - Epoch\n\t.uint32le('RecentTimeSocLimit4Off')  // index 76 - Epoch\n\t.uint32le('LifeCountAltChargeOn')    // index 80\n\t.uint32le('RecentTimeAltChargeOn')   // index 84 - Epoch\n\t.uint32le('RecentTimeAltChargeOff')  // index 88 - Epoch\n\t.uint32le('LifeCountAltDischgOn')    // index 92\n\t.uint32le('RecentTimeAltDischgOn')   // index 96 - Epoch\n\t.uint32le('RecentTimeAltDischgOff')  // index 100 - Epoch\n\n  \nmsg.payload = typea.parse(buf);\n\nmsg.payload.RecentTimeBypassInitial = new Date(msg.payload.RecentTimeBypassInitial * 1000);\nmsg.payload.RecentTimeBypassComplete = new Date(msg.payload.RecentTimeBypassComplete * 1000);\nmsg.payload.RecentTimeBypassTest = new Date(msg.payload.RecentTimeBypassTest * 1000);\nmsg.payload.RecentTimeWizardSetup = new Date(msg.payload.RecentTimeWizardSetup * 1000);\nmsg.payload.RecentTimeBypassExtra = new Date(msg.payload.RecentTimeBypassExtra * 1000);\n\nswitch(msg.payload.SystemBypassTestOutcome) {\n    case 0:\n        msg.payload.SystemBypassTestOutcome = \"NotTested\";\n        break;\n    case 1:\n        msg.payload.SystemBypassTestOutcome = \"Preparing\";\n        break;\n    case 2:\n        msg.payload.SystemBypassTestOutcome = \"Testing\";\n        break;\n    case 3:\n        msg.payload.SystemBypassTestOutcome = \"PassOk\";\n        break;\n    case 4:\n        msg.payload.SystemBypassTestOutcome = \"Failed\";\n        break;\n    default:\n\t\tmsg.payload.SystemBypassTestOutcome = \"Bad\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 3580,
+        "wires": [
+            [
+                "bd9d75d9bcb579f5"
+            ]
+        ]
+    },
+    {
+        "id": "bd9d75d9bcb579f5",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1210,
+        "y": 3640,
+        "wires": []
+    },
+    {
+        "id": "52cc5a5e3b52f8e5",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 3840,
+        "wires": []
+    },
+    {
+        "id": "0993e8e795ab0645",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "d": true,
+        "name": "Msg_5a32_TimeSyncSetup",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n\t.skip(8)\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 3780,
+        "wires": [
+            [
+                "52cc5a5e3b52f8e5"
+            ]
+        ]
+    },
+    {
+        "id": "ccaf5a7e0a6fbe3c",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 3940,
+        "wires": []
+    },
+    {
+        "id": "89be817b4e1cc77a",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "Msg_3233_TelemetryDisplayStatus(v3)",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\n// Category    = Discovery\n// Description = System Discovery message\n// MsgLength   = 57\n// Version     = 3\n// Frequency   = 30 seconds\n// Valid from  = SW 2.15\n\nvar typea = new Packet()\n\t.skip(8)\n\t.uint8('SystemOpStatus') /* Choices\n            Simulator = 0,        // LED = rainbow pulse\n            Idle = 1,             // LED = green slow pulse\n            Discharging = 2,      // LED = green solid\n            SoC Empty = 3,        // LED = green double blink\n            Charging = 4,         // LED = blue slow pulse\n            Full = 5,             // LED = blue double blink\n            Timeout = 6,          // LED = red solid\n            Critical Pending = 7, // LED = red fast pulse\n            Critical Offline = 8, // LED = red slow pulse\n            Mqtt Offline = 9,     // LED = white blink\n            Auth Setup = 10,      // LED = white solid\n            Shunt Timeout = 11,   // LED = red solid  */\n\t.uint8('SystemAuthMode') /* Choices\n            Default     = 0,\n            Technician  = 1,\n            Factory     = 2, */\n\t.bit1('CriticalBatOkState')         // boolean index 10 - bit0\n\t.bit1('CriticalIsTransition')       // boolean index 10 - bit1\n\t.bit1('CriticalIsPrecharge')        // boolean index 10 - bit2\n\t.bit1('HeatOnState')                // boolean index 10 - bit3\n\t.bit1('CoolOnState')                // boolean index 10 - bit4\n\t.bit3('reserved1')\n\t.bit1('ChargeOnState')              // boolean index 11 - bit0\n\t.bit1('ChargeIsLimPower')           // boolean index 11 - bit1\n\t.bit1('DischgOnState')              // boolean index 11 - bit2\n\t.bit1('DischgIsLimPower')           // boolean index 11 - bit3\n\t.bit1('ChargeInBypass')             // boolean index 11 - bit4\n\t.bit1('ChargeHasBypassTempRelief')  // boolean index 11 - bit5\n\t.bit2('reserved2')\n\t.int16le('MinCellVolt', { formatter: (x) => { return x / 1000; } })   // index 12 - voltage\n\t.int16le('MaxCellVolt', { formatter: (x) => { return x / 1000; } })   // index 14 - voltage\n\t.int16le('AvgCellVolt', { formatter: (x) => { return x / 1000; } })   // index 16 - voltage\n\t.uint8('MinCellTemp', { formatter: (x) => { return x - 40; } })     // index 18 - temperature ºC\n\t.uint8('MaxCellTemp', { formatter: (x) => { return x - 40; } })     // index 19 - temperature ºC\n\t.uint8('AvgCellTemp', { formatter: (x) => { return x - 40; } })     // index 20 - temperature ºC\n\t.uint8('NumOfCellsInBypass')\n\t.int16le('ShuntVoltage', { formatter: (x) => { return x / 100; } })\n\t.floatle('ShuntCurrent', { formatter: (x) => { return x / 1000; } })\n\t.floatle('ShuntPowerVA', { formatter: (x) => { return x / 1000; } }) // kW\n\t.int16le('ShuntSOC', { formatter: (x) => { return x / 100; } })  // percent hires 2 dec.pt\n\t.floatle('NomCapacityToEmpty', { formatter: (x) => { return x / 1000; } }) // Ah\n\t.floatle('ShuntCumulkWhCharge', { formatter: (x) => { return x / 1000; } }) // kWh\n\t.floatle('ShuntCumulkWhDischg', { formatter: (x) => { return x / 1000; } }) // kWh\n\t.uint8('CriticalEvents')\n\t.int32le('SystemTime')      // index 47 - Epoch\n\t.uint8('GlobalSetupVers')   // index 51\n\t.uint8('LifetimeSetupVers') // index 52\n\t.uint8('DiffBypassTicks')   // index 53\n\t.uint8('DiffTempTicks')     // index 54\n\t.uint8('DiffVoltTicks')     // index 55\n\t.uint8('DiffLogicTicks')    // index 56\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 3880,
+        "wires": [
+            [
+                "ccaf5a7e0a6fbe3c"
+            ]
+        ]
+    },
+    {
+        "id": "21b6b2207955cb4e",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 4040,
+        "wires": []
+    },
+    {
+        "id": "e5b7cdca2e37eb69",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "d": true,
+        "name": "Msg_3031_DiscoveryDevice",
+        "func": "var Packet = global.get('binary_parser');\nvar buf = msg.payload;\n\nvar typea = new Packet()\n\t\t.skip(8)\n\n\nmsg.payload = typea.parse(buf);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 3980,
+        "wires": [
+            [
+                "21b6b2207955cb4e"
+            ]
+        ]
+    },
+    {
+        "id": "b8e224c1c18f2fac",
+        "type": "function",
+        "z": "2d6c057d03b50939",
+        "name": "CtrLogicStatus Influx",
+        "func": "var SocEnState1;\nvar SocEnState2;\nvar SocEnState3;\nvar SocEnState4;\nvar SocTrigState1;\nvar SocTrigState2;\nvar SocTrigState3;\nvar SocTrigState4;\nvar ExpansionRelay1;\nvar ExpansionRelay2;\nvar ExpansionRelay3;\nvar ExpansionSSR5;\nvar ExpansionSSR6;\nvar ExpansionSSR7;\nvar RelayA;\n\nSocEnState1 = (msg.payload.isSocOnState1);\nSocEnState2 = (msg.payload.isSocOnState2);\nSocEnState3 = (msg.payload.isSocOnState3);\nSocEnState4 = (msg.payload.isSocOnState4);\nSocTrigState1 = (msg.payload.hasSocLoTriggered1);\nSocTrigState2 = (msg.payload.hasSocLoTriggered2);\nSocTrigState3 = (msg.payload.hasSocLoTriggered3);\nSocTrigState4 = (msg.payload.hasSocLoTriggered4);\nExpansionRelay1 = (msg.payload.ExpansionOutputRelay1);\nExpansionRelay2 = (msg.payload.ExpansionOutputRelay2);\nExpansionRelay3 = (msg.payload.ExpansionOutputRelay3);\nExpansionSSR5 = (msg.payload.ExpansionOutputSSR5);\nExpansionSSR6 = (msg.payload.ExpansionOutputSSR6);\nExpansionSSR7 = (msg.payload.ExpansionOutputSSR7);\nRelayA = (msg.payload.RelayA);\n\nmsg.payload =\n{\n       SocEnState1: SocEnState1,\n       SocEnState2: SocEnState2,\n       SocEnState3: SocEnState3,\n       SocEnState4: SocEnState4,\n       SocTrigState1: SocTrigState1,\n       SocTrigState2: SocTrigState2,\n       SocTrigState3: SocTrigState3,\n       SocTrigState4: SocTrigState4,\n       ExpansionRelay1: ExpansionRelay1,\n       ExpansionRelay2: ExpansionRelay2,\n       ExpansionRelay3: ExpansionRelay3,\n       ExpansionSSR5: ExpansionSSR5,\n       ExpansionSSR6: ExpansionSSR6,\n       ExpansionSSR7: ExpansionSSR7,\n       RelayA: RelayA,\n       \n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1680,
+        "y": 3080,
+        "wires": [
+            [
+                "280c067f478064d8",
+                "64b3da7859a3cdbd"
+            ]
+        ]
+    },
+    {
+        "id": "64b3da7859a3cdbd",
+        "type": "influxdb out",
+        "z": "2d6c057d03b50939",
+        "influxdb": "bafffa78.f7bbc8",
+        "name": "CtrLogicStatus",
+        "measurement": "CtrLogicStatus",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "",
+        "retentionPolicyV18Flux": "",
+        "org": "",
+        "bucket": "",
+        "x": 2240,
+        "y": 3080,
+        "wires": []
+    },
+    {
+        "id": "280c067f478064d8",
+        "type": "debug",
+        "z": "2d6c057d03b50939",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 2230,
+        "y": 3120,
+        "wires": []
+    },
+    {
+        "id": "605bdeca.e6347",
+        "type": "ui_group",
+        "name": "16 Cell",
+        "tab": "f3fb9943.a12128",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bafffa78.f7bbc8",
+        "type": "influxdb",
+        "hostname": "192.168.99.95",
+        "port": "8086",
+        "protocol": "http",
+        "database": "batrium",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "",
+        "rejectUnauthorized": false
+    },
+    {
+        "id": "b37bd0d4.0bb66",
+        "type": "ui_group",
+        "name": "ShuntV",
+        "tab": "f3fb9943.a12128",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e2c441d6.9e1ae",
+        "type": "ui_group",
+        "name": "Shunt A",
+        "tab": "f3fb9943.a12128",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b0f57fc2.e496c",
+        "type": "ui_group",
+        "name": "8 Cell",
+        "tab": "f3fb9943.a12128",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f3fb9943.a12128",
+        "type": "ui_tab",
+        "name": "Watchmon",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
