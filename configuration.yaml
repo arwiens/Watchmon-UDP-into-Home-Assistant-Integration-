@@ -1,0 +1,377 @@
+
+influxdb:
+  host: 192.168.xx.xx
+  port: 8086
+  database: batrium
+  username: batrium
+  password: batrium
+  ssl: false
+  verify_ssl: false
+  exclude:
+    entity_globs: "*"
+
+sensor:
+  - platform: influxdb
+    host: 192.168.xx.xx
+    username: batrium
+    password: batrium
+    queries:
+      - name: Batrium1 Cell 1
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell1
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 2
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell2
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 3
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell3
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 4
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell4
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 5
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell5
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 6
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell6
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 7
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell7
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 8
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell8
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 9
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell9
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 10
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell10
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 11
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell11
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 12
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell12
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 13
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell13
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 14
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell14
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 15
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell15
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell 16
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: Cell16
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Voltage"'
+
+      - name: Batrium1 Cell Min
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: MiCV
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Min_Max_Avg"'
+
+      - name: Batrium1 Cell Max
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: MaCV
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Min_Max_Avg"'
+
+      - name: Batrium1 Cell Avg
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: AvCV
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Cell_Min_Max_Avg"'
+
+      - name: Batrium1 Battery Temperature
+        unit_of_measurement: "°C"
+        value_template: "{{ value | round(4) }}"
+        field: BattTemp
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_State_SOC_Temp"'
+
+      - name: Batrium1 Shunt SOC
+        unit_of_measurement: "%"
+        value_template: "{{ value | round(4) }}"
+        field: SOC
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_State_SOC_Temp"'
+
+      - name: Batrium1 Shunt State
+        field: SysOpState
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_State_SOC_Temp"'
+
+      - name: Batrium1 Shunt Current
+        unit_of_measurement: A
+        value_template: "{{ value | round(4) }}"
+        field: ShuntC
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_C_V_W"'
+
+      - name: Batrium1 Shunt Voltage
+        unit_of_measurement: V
+        value_template: "{{ value | round(4) }}"
+        field: ShuntV
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_C_V_W"'
+
+      - name: Batrium1 Shunt Wattage
+        unit_of_measurement: W
+        value_template: "{{ value | round(0) }}"
+        field: Watts
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_C_V_W"'
+
+      - name: Batrium1 Shunt Status
+        field: ShuntStatus
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_Status"'
+
+      - name: Batrium1 Cool Status
+        field: CoolOnStat
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_Status"'
+
+      - name: Batrium1 Heat Status
+        field: HeatOnStat
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."Shunt_Status"'
+
+      - name: Batrium1 SOC % Enabled 1
+        field: SocEnState1
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SOC % Enabled 2
+        field: SocEnState2
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SOC % Enabled 3
+        field: SocEnState3
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SOC % Enabled 4
+        field: SocEnState4
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SOC % On 1
+        value_template: "{{ value | round(0) }}"
+        field: SocTrigState1
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SOC % On 2
+        value_template: "{{ value | round(0) }}"
+        field: SocTrigState2
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SOC % On 3
+        value_template: "{{ value | round(0) }}"
+        field: SocTrigState3
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SOC % On 4
+        value_template: "{{ value | round(0) }}"
+        field: SocTrigState4
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 Relay 1
+        value_template: "{{ value | round(0) }}"
+        field: ExpansionRelay1
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 Relay 2
+        value_template: "{{ value | round(0) }}"
+        field: ExpansionRelay2
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 Relay 3
+        value_template: "{{ value | round(0) }}"
+        field: ExpansionRelay3
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SSR 5
+        value_template: "{{ value | round(0) }}"
+        field: ExpansionSSR5
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SSR 6
+        value_template: "{{ value | round(0) }}"
+        field: ExpansionSSR6
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 SSR 7
+        value_template: "{{ value | round(0) }}"
+        field: ExpansionSSR7
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
+
+      - name: Batrium1 Relay A
+        value_template: "{{ value | round(0) }}"
+        field: RelayA
+        where: "time > now() - 1d"
+        group_function: last
+        database: batrium
+        measurement: '"batrium"."autogen"."CtrLogicStatus"'
