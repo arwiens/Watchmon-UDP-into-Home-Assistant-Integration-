@@ -2435,7 +2435,7 @@
     {
         "id": "bafffa78.f7bbc8",
         "type": "influxdb",
-        "hostname": "192.168.99.95",
+        "hostname": "192.168.xx.xx",
         "port": "8086",
         "protocol": "http",
         "database": "batrium",
