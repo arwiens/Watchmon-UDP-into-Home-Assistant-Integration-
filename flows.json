@@ -1427,7 +1427,7 @@
         "id": "97f21722f6cea37e",
         "type": "comment",
         "z": "2d6c057d03b50939",
-        "name": "Based on Watchmon SW 1.0.30 UDP Outbound protocol",
+        "name": "Based on Watchmon UDP Outbound protocol",
         "info": "All credit for the parsers to Daniel Römer\nBased on his grafpi project:\nhttp://diytechandrepairs.nu/raspberry-solar/\n\nBatrium WatchMon 4\n\nThe machine running node red must be able \nto acces port 18542 UDP IPv4\n\n",
         "x": 1239,
         "y": 71,
