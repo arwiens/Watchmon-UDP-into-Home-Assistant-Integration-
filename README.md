@@ -1,6 +1,6 @@
 # Watchmon-UDP-into-Home-Assistant-Integration-
 
-Steps to setup on a Ubuntu Linux Virtual Machine
+Steps to setup on a Ubuntu Linux Virtual Machine, this assumes that you have a freash install of Ubuntu 22.04 Server with Ubuntu Desktop (See Setup of Linux Server for Home Assistant.docx)
 
 Note text after # is for comments and the rest are for terminal command line entry…
 
